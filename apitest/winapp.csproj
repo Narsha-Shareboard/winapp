@@ -77,6 +77,9 @@
     </Compile>
     <Compile Include="Model\RegisterModel.cs" />
     <Compile Include="ServerSetting.cs" />
+    <Compile Include="Signup.xaml.cs">
+      <DependentUpon>Signup.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewModel\LoginViewModel.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
@@ -84,6 +87,10 @@
     </Compile>
     <Compile Include="ViewModel\RegisterViewModel.cs" />
     <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Signup.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
