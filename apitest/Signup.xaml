@@ -12,10 +12,10 @@
         <Grid HorizontalAlignment="Left" Height="653" Margin="-2,-3,0,0" VerticalAlignment="Top" Width="402" Background="White">
             <Rectangle Fill="#FF109E9E" HorizontalAlignment="Left" Height="507" Stroke="Black" VerticalAlignment="Top" Width="402"/>
             <TextBlock Height="100" Margin="50,70,50,0" TextWrapping="Wrap" Text="SIGN UP" VerticalAlignment="Top" FontSize="66" TextAlignment="Center" Foreground="White"/>
-            <TextBox Height="50" Margin="69,206,69,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.IsSharedSizeScope="True" FontSize="28" FontFamily="Tmoney RoundWind ExtraBold" Text="ID"/>
-            <TextBox Height="50" Margin="69,282,66,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top" FontSize="28" FontFamily="Tmoney RoundWind ExtraBold"/>
-            <TextBox Height="50" Margin="69,363,69,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top" FontSize="28" FontFamily="Tmoney RoundWind ExtraBold"/>
-            <Button Content="SIGN IN" Height="50" Margin="69,480,69,0" VerticalAlignment="Top" FontSize="24" Background="#FF085252" Grid.IsSharedSizeScope="True" Foreground="White"/>
+            <TextBox x:Name="tbID" Height="50" Margin="69,206,69,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.IsSharedSizeScope="True" FontSize="28" FontFamily="Tmoney RoundWind ExtraBold"/>
+            <PasswordBox x:Name="tbPassword" Height="50" Margin="69,282,69,0" VerticalAlignment="Top" FontSize="28" FontFamily="Tmoney RoundWind ExtraBold" PasswordChar="●"/>
+            <PasswordBox x:Name="tbCheck" Height="50" Margin="69,363,69,0" VerticalAlignment="Top" FontSize="28" FontFamily="Tmoney RoundWind ExtraBold" PasswordChar="●"/>
+            <Button Content="SIGN IN" Click="btnRegister_Click" Height="50" Margin="69,480,69,0" VerticalAlignment="Top" FontSize="24" Background="#FF085252" Grid.IsSharedSizeScope="True" Foreground="White"/>
         </Grid>
 
     </Grid>

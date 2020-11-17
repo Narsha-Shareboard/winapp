@@ -1,4 +1,9 @@
-﻿using System;
+﻿using apitest.manager;
+using apitest.Model;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using RestSharp;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +28,29 @@ namespace apitest
         public Signup()
         {
             InitializeComponent();
+            Loaded += Signup_Loaded;
+        }
+
+        private void Signup_Loaded(object sender, RoutedEventArgs e)
+        {
+            DataContext = App.RegisterViewModel;
+        }
+
+        private void btnRegister_Click(object sender, RoutedEventArgs e)
+        {
+            if(tbPassword.Password == tbCheck.Password)
+            {
+                onRegister();
+            }
+            else
+            {
+                MessageBox.Show("비밀번호가 일치하지 않습니다.", "ERROR");
+            }
+        }
+
+        private async void onRegister()
+        {
+            await App.RegisterViewModel.Register(tbID.Text, tbPassword.Password);
         }
     }
 }

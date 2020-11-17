@@ -16,5 +16,6 @@ namespace apitest
     public partial class App : Application
     {
         public static LoginViewModel LoginViewModel = new LoginViewModel();
+        public static RegisterViewModel RegisterViewModel = new RegisterViewModel();
     }
 }

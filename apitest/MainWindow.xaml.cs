@@ -41,6 +41,12 @@ namespace apitest
             onLogin();
         }
 
+        private void btnRegister_Click(object sender, RoutedEventArgs e)
+        {
+            Page Signup = new Signup();
+            this.Content = Signup;
+        }
+
         private async void onLogin()
         {
            await App.LoginViewModel.Login(tbID.Text, tbPassword.Password);

@@ -17,5 +17,6 @@
         <PasswordBox Grid.Row="1" x:Name="tbPassword" Margin="96,144,96,126" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontSize="20" Grid.RowSpan="2" PasswordChar="●"/>
         <Button Grid.Row="2" x:Name="btnLogin" Click="btnLogin_Click" Margin="134,77,134,43" Content="로그인"/>
         <TextBlock Grid.Row="3" Text="{Binding Token}"/>
+        <Button Content="회원가입" Click="btnRegister_Click" HorizontalAlignment="Left" Margin="221,130,0,0" Grid.Row="2" VerticalAlignment="Top" Width="75"/>
     </Grid>
 </Window>
