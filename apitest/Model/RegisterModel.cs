@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace apitest.Model
 {
-    class RegisterModel
+    public class RegisterModel
     {
         public string result { get; set; }
     }

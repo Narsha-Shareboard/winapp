@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:apitest"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Shareboard" Height="650" Width="400">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="0.25*"/>
@@ -13,9 +13,9 @@
             <RowDefinition Height="0.25*"/>
             <RowDefinition Height="0.25*"/>
         </Grid.RowDefinitions>
-        <TextBox Grid.Row="0" x:Name="tbID"></TextBox>
-        <TextBox Grid.Row="1" x:Name="tbPassword"></TextBox>
-        <Button Grid.Row="2" x:Name="btnLogin" Click="btnLogin_Click"/>
+        <TextBox Grid.Row="1" x:Name="tbID" Margin="96,82,96,33" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontSize="20"/>
+        <PasswordBox Grid.Row="1" x:Name="tbPassword" Margin="96,144,96,126" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontSize="20" Grid.RowSpan="2" PasswordChar="●"/>
+        <Button Grid.Row="2" x:Name="btnLogin" Click="btnLogin_Click" Margin="134,77,134,43" Content="로그인"/>
         <TextBlock Grid.Row="3" Text="{Binding Token}"/>
     </Grid>
 </Window>

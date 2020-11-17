@@ -43,7 +43,7 @@ namespace apitest
 
         private async void onLogin()
         {
-           await App.LoginViewModel.Login(tbID.Text, tbPassword.Text);
+           await App.LoginViewModel.Login(tbID.Text, tbPassword.Password);
         }
     }
 }
