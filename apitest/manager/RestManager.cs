@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web.UI.WebControls;
 
-namespace apitest.manager
+namespace winapp.manager
 {
     public class QueryParam
     {

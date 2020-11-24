@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace winapp
+namespace _1234
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -23,18 +23,6 @@ namespace winapp
         public MainWindow()
         {
             InitializeComponent();
-            Loaded += MainWindow_Loaded;
-        }
-
-        private void MainWindow_Loaded(object sender, RoutedEventArgs e)
-        {
-            Signin signup = new Signin(this);
-            NavigatePage(signup);
-        }
-
-        public void NavigatePage(Page page)
-        {
-            mainFrame.Navigate(page);
         }
     }
 }

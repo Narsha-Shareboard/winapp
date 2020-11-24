@@ -1,4 +1,4 @@
-﻿<Page x:Class="apitest.Signup"
+﻿<Page x:Class="winapp.Signup"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -17,6 +17,5 @@
             <PasswordBox x:Name="tbCheck" Height="50" Margin="69,363,69,0" VerticalAlignment="Top" FontSize="28" FontFamily="Tmoney RoundWind ExtraBold" PasswordChar="●"/>
             <Button Content="SIGN IN" Click="btnRegister_Click" Height="50" Margin="69,480,69,0" VerticalAlignment="Top" FontSize="24" Background="#FF085252" Grid.IsSharedSizeScope="True" Foreground="White"/>
         </Grid>
-
     </Grid>
 </Page>

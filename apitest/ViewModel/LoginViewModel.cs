@@ -1,5 +1,5 @@
-﻿using apitest.manager;
-using apitest.Model;
+﻿using winapp.manager;
+using winapp.Model;
 using Newtonsoft.Json.Linq;
 using Prism.Mvvm;
 using RestSharp;
@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace apitest.ViewModel
+namespace winapp.ViewModel
 {
     public class LoginViewModel : BindableBase
     {

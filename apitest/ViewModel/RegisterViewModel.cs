@@ -1,5 +1,5 @@
-﻿using apitest.manager;
-using apitest.Model;
+﻿using winapp.manager;
+using winapp.Model;
 using Newtonsoft.Json.Linq;
 using Prism.Mvvm;
 using RestSharp;
@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Navigation;
 
-namespace apitest.ViewModel
+namespace winapp.ViewModel
 {
     public class RegisterViewModel : BindableBase
     {

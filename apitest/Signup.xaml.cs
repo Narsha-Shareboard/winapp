@@ -1,5 +1,5 @@
-﻿using apitest.manager;
-using apitest.Model;
+﻿using winapp.manager;
+using winapp.Model;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using RestSharp;
@@ -18,13 +18,21 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace apitest
+namespace winapp
 {
     /// <summary>
     /// Signup.xaml에 대한 상호 작용 논리
     /// </summary>
     public partial class Signup : Page
     {
+        private readonly MainWindow _mainWindow;
+        public Signup(MainWindow mainWindow)
+        {
+            InitializeComponent();
+            _mainWindow = mainWindow;
+            Loaded += Signup_Loaded;
+        }
+
         public Signup()
         {
             InitializeComponent();
@@ -34,6 +42,7 @@ namespace apitest
         private void Signup_Loaded(object sender, RoutedEventArgs e)
         {
             DataContext = App.RegisterViewModel;
+            //MessageBox.Show(".", "성공");
         }
 
         private void btnRegister_Click(object sender, RoutedEventArgs e)
