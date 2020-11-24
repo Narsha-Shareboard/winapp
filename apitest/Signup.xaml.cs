@@ -42,7 +42,6 @@ namespace winapp
         private void Signup_Loaded(object sender, RoutedEventArgs e)
         {
             DataContext = App.RegisterViewModel;
-            //MessageBox.Show(".", "성공");
         }
 
         private void btnRegister_Click(object sender, RoutedEventArgs e)
@@ -60,6 +59,7 @@ namespace winapp
         private async void onRegister()
         {
             await App.RegisterViewModel.Register(tbID.Text, tbPassword.Password);
+            _mainWindow.NavigatePage(new Signin(_mainWindow));
         }
     }
 }
