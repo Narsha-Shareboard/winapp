@@ -47,5 +47,10 @@ namespace winapp.manager
             var result = JsonConvert.DeserializeObject<T>(response.Content);
             return result;
         }
+
+        internal Task RestRequest<T>(string v1, object p, object pOST, string v2)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

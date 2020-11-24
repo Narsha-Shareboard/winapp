@@ -8,6 +8,8 @@
       d:DesignHeight="650" d:DesignWidth="400"
       Title="Page1">
 
+    
+    
     <Grid>
         <Grid HorizontalAlignment="Left" Height="653" Margin="-2,-3,0,0" VerticalAlignment="Top" Width="402" Background="White">
             <Rectangle Fill="#FF109E9E" HorizontalAlignment="Left" Height="507" Stroke="Black" VerticalAlignment="Top" Width="402"/>
@@ -19,3 +21,4 @@
         </Grid>
     </Grid>
 </Page>
+ 

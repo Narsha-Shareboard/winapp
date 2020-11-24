@@ -22,6 +22,12 @@ namespace winapp.ViewModel
             get => _token;
             set => SetProperty(ref _token, value);
         }
+
+        private void SetProperty(ref string token, string value)
+        {
+            throw new NotImplementedException();
+        }
+
         public string Result;
 
         public async Task Login(string Id, string Password)
