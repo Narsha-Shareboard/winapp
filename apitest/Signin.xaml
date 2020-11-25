@@ -1,0 +1,21 @@
+﻿<Page x:Class="winapp.Signin"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:apitest"
+      mc:Ignorable="d" 
+      Title="Sign In" Height="650" Width="400">
+
+    <Grid HorizontalAlignment="Left" Height="650" Margin="0,0,0,0" VerticalAlignment="Bottom" Width="400" Background="White">
+        <Rectangle Fill="#FF109E9E" HorizontalAlignment="Left" Height="507" Stroke="Black" VerticalAlignment="Bottom" Width="402" Margin="0,0,0,146"/>
+        <TextBox x:Name="tbID" Margin="69,240,69,363" FontSize="20"/>
+        <PasswordBox x:Name="tbPassword" Margin="69,324,69,279" FontSize="20" PasswordChar="●" VerticalAlignment="Center" Height="50"/>
+        <Button x:Name="btnLogin" Click="btnLogin_Click" Margin="69,480,69,120" Content="Sign In" RenderTransformOrigin="0.5,0.5" Background="#FF085252" Foreground="White" FontSize="24"/>
+        <Button x:Name="btnRegister" Content="Sign Up" Click="btnRegister_Click" Margin="258,397,69,226" Width="75" Background="#FF085252" Foreground="White" />
+        <CheckBox x:Name="chkAutoLogin" Content="Auto Login" Margin="69,397,250,239"/>
+        <TextBlock HorizontalAlignment="Left" Margin="69,224,0,0" TextWrapping="Wrap" Text="ID" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="69,308,0,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top"/>
+        <TextBlock Height="100" Margin="69,106,69,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="50" TextAlignment="Center" Foreground="White" Text="Shareboard"/>
+    </Grid>
+</Page>
