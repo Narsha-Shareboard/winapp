@@ -29,8 +29,8 @@ namespace winapp
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
             mainFrame.NavigationUIVisibility = NavigationUIVisibility.Hidden;
-            Signin signup = new Signin(this);
-            NavigatePage(signup);
+            Signin signin = new Signin(this);
+            NavigatePage(signin);
         }
 
         public void NavigatePage(Page page)
