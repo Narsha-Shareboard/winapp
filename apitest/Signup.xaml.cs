@@ -61,5 +61,10 @@ namespace winapp
             await App.RegisterViewModel.Register(tbID.Text, tbPassword.Password);
             _mainWindow.NavigatePage(new Signin(_mainWindow));
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
