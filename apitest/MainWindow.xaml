@@ -8,6 +8,6 @@
         Title="Shareboard" Height="685" Width="415">
 
     <DockPanel>
-        <Frame x:Name="mainFrame" Source="./Signin.xaml"/>
+        <Frame x:Name="mainFrame"/>
     </DockPanel>
 </Window>
