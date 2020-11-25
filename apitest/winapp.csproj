@@ -127,6 +127,7 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Resource Include="Resources\NanumSquare_acR.ttf" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
