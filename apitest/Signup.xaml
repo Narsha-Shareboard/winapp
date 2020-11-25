@@ -17,7 +17,7 @@
             <Button Content="Sign Up" Click="btnRegister_Click" Height="50" Margin="69,480,69,0" VerticalAlignment="Top" FontSize="24" Background="#FF085252" Grid.IsSharedSizeScope="True" Foreground="White"/>
             <TextBlock HorizontalAlignment="Left" Margin="69,190,0,0" TextWrapping="Wrap" Text="ID" VerticalAlignment="Top"/>
             <TextBlock HorizontalAlignment="Left" Margin="69,263,0,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top"/>
-            <TextBlock HorizontalAlignment="Left" Margin="69,336,0,0" TextWrapping="Wrap" Text="Check" VerticalAlignment="Top"/>
+            <TextBlock HorizontalAlignment="Left" Margin="69,336,0,0" TextWrapping="Wrap" Text="Confirm" VerticalAlignment="Top"/>
             <Button Content="◀" Click="btnBack" Margin="360,610,10,10" Width="30" Height="30" Background="#FF109E9E" Foreground="White"/>
         </Grid>
     </Grid>
