@@ -62,9 +62,9 @@ namespace winapp
             _mainWindow.NavigatePage(new Signin(_mainWindow));
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void btnBack(object sender, RoutedEventArgs e)
         {
-
+            _mainWindow.NavigatePage(new Signin(_mainWindow));
         }
     }
 }

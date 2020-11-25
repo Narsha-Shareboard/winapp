@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:apitest"
         mc:Ignorable="d"
-        Title="Shareboard" Height="650" Width="400">
+        Title="Shareboard" Height="685" Width="415">
 
     <DockPanel>
         <Frame x:Name="mainFrame"/>
