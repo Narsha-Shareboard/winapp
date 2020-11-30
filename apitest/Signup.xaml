@@ -10,20 +10,22 @@
     <Grid>
         <Grid HorizontalAlignment="Left" Height="650" Margin="0,0,0,0" VerticalAlignment="Top" Width="400" Background="White" RenderTransformOrigin="1,0">
             <Rectangle Fill="#FF109E9E" HorizontalAlignment="Left" Height="507" Stroke="Transparent" VerticalAlignment="Bottom" Width="402" Margin="0,0,0,146"/>
-           
+
             <TextBlock Height="100" Margin="69,70,69,0" TextWrapping="Wrap" Text="SIGN UP" VerticalAlignment="Top" FontSize="66" TextAlignment="Center" Foreground="White"/>
-            <TextBox x:Name="tbID" Height="50" Margin="69,206,69,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.IsSharedSizeScope="True" FontSize="28" FontFamily="Tmoney RoundWind ExtraBold"/>
-            
-            <PasswordBox x:Name="tbPassword" Height="50" Margin="69,279,69,0" VerticalAlignment="Top" FontSize="28" FontFamily="Tmoney RoundWind ExtraBold" PasswordChar="●"/>
-            <PasswordBox x:Name="tbCheck" Height="50" Margin="69,352,69,0" VerticalAlignment="Top" FontSize="28" FontFamily="Tmoney RoundWind ExtraBold" PasswordChar="●"/>
-            
-            <Button Content="Sign Up" Click="btnRegister_Click" Height="50" Margin="69,480,69,0" VerticalAlignment="Top" FontSize="24" Background="#FF085252" Grid.IsSharedSizeScope="True" Foreground="White"/>
+            <TextBox x:Name="tbID" Height="50" Margin="69,206,69,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.IsSharedSizeScope="True" FontSize="20" FontFamily="Tmoney RoundWind ExtraBold" BorderBrush="Transparent"
+                     VerticalContentAlignment="Center"/>
+
+            <PasswordBox x:Name="tbPassword" Height="50" Margin="69,279,69,0" VerticalAlignment="Top" FontSize="20" FontFamily="/.../Resources/NanumSquare_acR.ttf/.../" PasswordChar="●" BorderBrush="Transparent"
+                         VerticalContentAlignment="Center"/>
+            <PasswordBox x:Name="tbCheck" Height="50" Margin="69,352,69,0" VerticalAlignment="Top" FontSize="20" FontFamily="/.../Resources/NanumSquare_acR.ttf/.../" PasswordChar="●" BorderBrush="Transparent"
+                         VerticalContentAlignment="Center"/>
+
+            <Button Content="Sign Up" Click="btnRegister_Click" Height="50" Margin="69,480,69,0" VerticalAlignment="Top" FontSize="24" Background="#FF085252" Grid.IsSharedSizeScope="True" Foreground="White" BorderBrush="Transparent"/>
 
             <TextBlock HorizontalAlignment="Left" Margin="69,190,0,0" TextWrapping="Wrap" Text="ID" VerticalAlignment="Top"/>
             <TextBlock HorizontalAlignment="Left" Margin="69,263,0,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top"/>
             <TextBlock HorizontalAlignment="Left" Margin="69,336,0,0" TextWrapping="Wrap" Text="Confirm" VerticalAlignment="Top"/>
-            
-            <Button Content="◀" Click="btnBack" Margin="360,610,10,10" Width="30" Height="30" Background="#FF109E9E" Foreground="White"/>
+
         </Grid>
     </Grid>
 </Page>
