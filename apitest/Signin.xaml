@@ -15,7 +15,7 @@
         <TextBox x:Name="tbID" Margin="69,240,69,363" FontSize="20" VerticalContentAlignment="Center" BorderBrush="Transparent"
                   FontFamily="/.../Resources/NanumSquare_acR.ttf/.../"/>
          <PasswordBox x:Name="tbPassword" Margin="69,324,69,279" FontSize="20" PasswordChar="●" VerticalAlignment="Center" Height="50" BorderBrush="Transparent"
-                      VerticalContentAlignment="Center" FontFamily="C:\Users\Hyeon\Desktop\개발\Git\winapp\apitest\Resources\NanumSquare_acR.ttf"/>
+                      VerticalContentAlignment="Center" FontFamily="/.../Resources/NanumSquare_acR.ttf/.../"/>
         
         <Button x:Name="btnLogin" Click="btnLogin_Click" Margin="69,480,69,120" Content="Sign In" RenderTransformOrigin="0.5,0.5" Background="#FF085252" Foreground="White" FontSize="20"
                 BorderBrush="Transparent"/>
@@ -26,6 +26,6 @@
         <TextBlock HorizontalAlignment="Left" Margin="69,224,0,0" TextWrapping="Wrap" Text="ID" VerticalAlignment="Top"/>
         <TextBlock HorizontalAlignment="Left" Margin="69,308,0,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top"/>
         <TextBlock Height="100" Margin="69,106,69,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="50" TextAlignment="Center" Foreground="White" Text="Shareboard"
-                   FontFamily="C:\Users\Hyeon\Desktop\개발\Git\winapp\apitest\Resources\NanumSquare_acR.ttf"/>
+                   FontFamily="/.../Resources/NanumSquare_acR.ttf/.../"/>
     </Grid>
 </Page>
