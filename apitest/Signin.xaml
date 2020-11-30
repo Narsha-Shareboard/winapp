@@ -7,25 +7,72 @@
       mc:Ignorable="d" 
       Title="Sign In" Height="650" Width="400">
 
+    <Page.Resources>
+        <ControlTemplate x:Key="TextBoxBaseControlTemplate" TargetType="{x:Type TextBoxBase}">
+            <Border Background="{TemplateBinding Background}" 
+                x:Name="Bd" BorderBrush="Transparent"
+                BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="15">
+                <ScrollViewer x:Name="PART_ContentHost"/>
+            </Border>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsEnabled" Value="False">
+                    <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" TargetName="Bd"/>
+                    <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+                </Trigger>
+                <Trigger Property="Width" Value="Auto">
+                    <Setter Property="MinWidth" Value="100"/>
+                </Trigger>
+                <Trigger Property="Height" Value="Auto">
+                    <Setter Property="MinHeight" Value="20"/>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+
+        <ControlTemplate x:Key="PasswordBoxTemplate" TargetType="{x:Type PasswordBox}">
+            <Border Background="{TemplateBinding Background}" 
+                x:Name="Bd" BorderBrush="Transparent"
+                BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="15">
+                <ScrollViewer x:Name="PART_ContentHost"/>
+            </Border>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsEnabled" Value="False">
+                    <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" TargetName="Bd"/>
+                    <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+                </Trigger>
+                <Trigger Property="Width" Value="Auto">
+                    <Setter Property="MinWidth" Value="100"/>
+                </Trigger>
+                <Trigger Property="Height" Value="Auto">
+                    <Setter Property="MinHeight" Value="20"/>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+
+
+    </Page.Resources>
+    
+    
+
     <Grid HorizontalAlignment="Left" Height="650" Margin="0,0,0,0" VerticalAlignment="Bottom" Width="400" Background="White">
         <Border BorderBrush="Transparent">
-        <Rectangle Fill="#FF109E9E" HorizontalAlignment="Left" Height="507" Stroke="Black" VerticalAlignment="Bottom" Width="402" Margin="0,0,0,146" />
+            <Rectangle Fill="#FF109E9E" HorizontalAlignment="Left" Height="507" Stroke="Transparent" VerticalAlignment="Bottom" Width="402" Margin="0,0,0,146" />
         </Border>
-        
-        <TextBox x:Name="tbID" Margin="69,240,69,363" FontSize="20" VerticalContentAlignment="Center" BorderBrush="Transparent"
-                  FontFamily="/.../Resources/NanumSquare_acR.ttf/.../"/>
-         <PasswordBox x:Name="tbPassword" Margin="69,324,69,279" FontSize="20" PasswordChar="●" VerticalAlignment="Center" Height="50" BorderBrush="Transparent"
-                      VerticalContentAlignment="Center" FontFamily="/.../Resources/NanumSquare_acR.ttf/.../"/>
-        
+
+        <TextBox x:Name="tbID" Margin="69,296,69,307" FontSize="20" VerticalContentAlignment="Center" BorderBrush="Transparent"
+                  FontFamily="/.../Resources/NanumSquare_acR.ttf/.../" Template="{StaticResource TextBoxBaseControlTemplate}"/>
+        <PasswordBox x:Name="tbPassword" Margin="69,375,69,225" FontSize="20" PasswordChar="●" VerticalAlignment="Center" Height="50" BorderBrush="Transparent"
+                      VerticalContentAlignment="Center" FontFamily="/.../Resources/NanumSquare_acR.ttf/.../" Template="{StaticResource PasswordBoxTemplate}"/>
+
         <Button x:Name="btnLogin" Click="btnLogin_Click" Margin="69,480,69,120" Content="Sign In" RenderTransformOrigin="0.5,0.5" Background="#FF085252" Foreground="White" FontSize="20"
-                BorderBrush="Transparent"/>
-        <Button x:Name="btnRegister" Content="Sign Up" Click="btnRegister_Click" Margin="278,392,69,234" Background="Transparent" RenderTransformOrigin="0.493,0.238" BorderThickness="0"/>
-       
-        <CheckBox x:Name="chkAutoLogin" Content="Auto Login" Margin="69,397,250,237"/>
+                BorderBrush="Transparent" FontFamily="/.../Resources/NanumSquare_acR.ttf/.../"/>
         
-        <TextBlock HorizontalAlignment="Left" Margin="69,224,0,0" TextWrapping="Wrap" Text="ID" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" Margin="69,308,0,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top"/>
-        <TextBlock Height="100" Margin="69,106,69,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="50" TextAlignment="Center" Foreground="White" Text="Shareboard"
+        <Button x:Name="btnRegister" Content="Sign Up" Click="btnRegister_Click" Margin="270,533,77,93" Background="Transparent" RenderTransformOrigin="0.493,0.238" BorderThickness="0"/>
+
+        <CheckBox x:Name="chkAutoLogin" BorderBrush="Transparent" Content="Auto Login" Margin="69,450,250,184"/>
+
+        <TextBlock HorizontalAlignment="Left" Margin="69,280,0,0" TextWrapping="Wrap" Text="ID" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="69,360,0,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top"/>
+        <TextBlock Height="50" Margin="69,106,69,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="50" TextAlignment="Center" Foreground="White" Text="Shareboard"
                    FontFamily="/.../Resources/NanumSquare_acR.ttf/.../"/>
     </Grid>
 </Page>
