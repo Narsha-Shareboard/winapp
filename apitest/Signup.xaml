@@ -172,16 +172,16 @@
         <Grid HorizontalAlignment="Left" Height="650" Margin="0,0,0,0" VerticalAlignment="Top" Width="400" Background="White" RenderTransformOrigin="1,0">
             <Rectangle Fill="#FF109E9E" HorizontalAlignment="Left" Height="507" Stroke="Transparent" VerticalAlignment="Bottom" Width="402" Margin="0,0,0,146"/>
 
-            <TextBlock Height="100" Margin="69,70,69,0" TextWrapping="Wrap" Text="SIGN UP" VerticalAlignment="Top" FontSize="66" TextAlignment="Center" Foreground="White"/>
+            <TextBlock Height="100" Margin="70,75,70,0" TextWrapping="Wrap" Text="SIGN UP" VerticalAlignment="Top" FontSize="66" TextAlignment="Center" Foreground="White"/>
 
-            <TextBox x:Name="tbID" Height="50" Margin="69,206,69,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.IsSharedSizeScope="True" FontSize="20" FontFamily="Tmoney RoundWind ExtraBold" BorderBrush="Transparent"
+            <TextBox x:Name="tbID" Height="50" Margin="70,235,70,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.IsSharedSizeScope="True" FontSize="20" FontFamily="Tmoney RoundWind ExtraBold" BorderBrush="Transparent"
                      VerticalContentAlignment="Center" Style="{StaticResource TBPlaceHolder}" Tag="ID"/>
-            <PasswordBox x:Name="tbPassword" Height="50" Margin="69,279,69,0" VerticalAlignment="Top" FontSize="20" FontFamily="/.../Resources/NanumSquare_acR.ttf/.../" PasswordChar="●" BorderBrush="Transparent"
+            <PasswordBox x:Name="tbPassword" Height="50" Margin="70,315,70,0" VerticalAlignment="Top" FontSize="20" FontFamily="/.../Resources/NanumSquare_acR.ttf/.../" PasswordChar="●" BorderBrush="Transparent"
                          VerticalContentAlignment="Center" Style="{StaticResource PWPlaceHolder}" Tag="Password"/>
-            <PasswordBox x:Name="tbCheck" Height="50" Margin="69,352,69,0" VerticalAlignment="Top" FontSize="20" FontFamily="/.../Resources/NanumSquare_acR.ttf/.../" PasswordChar="●" BorderBrush="Transparent"
+            <PasswordBox x:Name="tbCheck" Height="50" Margin="70,395,70,0" VerticalAlignment="Top" FontSize="20" FontFamily="/.../Resources/NanumSquare_acR.ttf/.../" PasswordChar="●" BorderBrush="Transparent"
                          VerticalContentAlignment="Center" Style="{StaticResource Confirm}" Tag="Confirm"/>
 
-            <Button Content="Sign Up" Click="btnRegister_Click" Height="50" Margin="69,480,69,0" VerticalAlignment="Top" FontSize="24" Background="#FF085252" Grid.IsSharedSizeScope="True" Foreground="White" BorderBrush="Transparent"/>
+            <Button Content="Sign Up" Click="btnRegister_Click" Height="50" Margin="70,478,70,0" VerticalAlignment="Top" FontSize="24" Background="#FF085252" Grid.IsSharedSizeScope="True" Foreground="White" BorderBrush="Transparent"/>
         </Grid>
     </Grid>
 </Page>
