@@ -56,6 +56,11 @@ namespace winapp
         {
             await App.LoginViewModel.Login(tbID.Text, tbPassword.Password);
         }
+
+        private void btnFindPW_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("개발중인 기능입니다!");
+        }
     }
     public class PasswordBoxMonitor : DependencyObject
     {

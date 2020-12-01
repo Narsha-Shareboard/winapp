@@ -48,9 +48,7 @@
                 </Trigger>
             </ControlTemplate.Triggers>
         </ControlTemplate>
-        
-        
-
+       
         <ControlTemplate x:Key="ButtonTemplate" TargetType="{x:Type Button}">
             <Border Background="{TemplateBinding Background}" 
                 x:Name="Bd" BorderBrush="Transparent"
@@ -107,7 +105,7 @@
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type PasswordBox}">
-                        <Border Height="50" Width="300"
+                        <Border Height="50" Width="260"
                                 Padding="20 0 0 0"
                                 CornerRadius="15"
                                 Background="White">
@@ -148,14 +146,14 @@
                   FontFamily="/.../Resources/NanumSquare_acR.ttf/.../" Template="{StaticResource TextBoxBaseControlTemplate}"/>
         <PasswordBox x:Name="tbPassword" Margin="69,375,69,225" FontSize="20" PasswordChar="●" VerticalAlignment="Center" Height="50" BorderBrush="Transparent"
                       VerticalContentAlignment="Center" FontFamily="/.../Resources/NanumSquare_acR.ttf/.../" Template="{StaticResource PasswordBoxTemplate}"/>-->
-        <TextBox x:Name="tbID" Style="{StaticResource TBPlaceHolder}" Tag="아이디"/>
-        <PasswordBox x:Name="tbPassword" Margin="70,375,70,225" FontSize="20" PasswordChar="●" 
-                     Style="{StaticResource PWPlaceHolder}" Tag="비밀번호"/>
+        <TextBox x:Name="tbID" Style="{StaticResource TBPlaceHolder}" Tag="ID"/>
+        <PasswordBox x:Name="tbPassword" Margin="70,375,70,225" FontSize="15" PasswordChar="●"  Style="{StaticResource PWPlaceHolder}" Tag="Password"/>
 
         <Button x:Name="btnLogin" Click="btnLogin_Click" Margin="69,480,69,120" Content="Sign In" RenderTransformOrigin="0.5,0.5" Background="#FF085252" Foreground="White" FontSize="20"
                 BorderBrush="Transparent" FontFamily="/.../Resources/NanumSquare_acR.ttf/.../" Template="{StaticResource ButtonTemplate}"/>
 
-        <Button x:Name="btnRegister" Content="Sign Up" Click="btnRegister_Click" Margin="270,533,77,93" Background="Transparent" RenderTransformOrigin="0.493,0.238" BorderThickness="0"/>
+        <Button x:Name="btnRegister" Content="Sign Up" Click="btnRegister_Click" Margin="270,527,77,99" Background="Transparent" RenderTransformOrigin="0.493,0.238" BorderThickness="0" Foreground="#9ABCD9"/>
+        <Button x:Name="btnFindPW" Content="Forgot Password?" Click="btnFindPW_Click" Margin="72,527,224,99" Background="Transparent" BorderThickness="0" Foreground="#9ABCD9"/>
 
         <CheckBox x:Name="chkAutoLogin" BorderBrush="Transparent" Content="Auto Login" Margin="69,450,250,184"/>
         <TextBlock Height="50" Margin="69,106,69,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="50" TextAlignment="Center" Foreground="White" Text="Shareboard"
