@@ -59,7 +59,7 @@ namespace winapp
 
         private void btnFindPW_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("개발중인 기능입니다!");
+            MessageBox.Show("관리자에게 문의하세요.", "ERROR");
         }
     }
     public class PasswordBoxMonitor : DependencyObject

@@ -182,6 +182,7 @@
                          VerticalContentAlignment="Center" Style="{StaticResource Confirm}" Tag="Confirm"/>
 
             <Button Content="Sign Up" Click="btnRegister_Click" Height="50" Margin="70,478,70,0" VerticalAlignment="Top" FontSize="24" Background="#FF085252" Grid.IsSharedSizeScope="True" Foreground="White" BorderBrush="Transparent"/>
+            <Button Content="◀" Click="btnBack" Height="30" Margin="360,610,10,10" FontSize="15" Background="#FF085252" Grid.IsSharedSizeScope="True" Foreground="White" BorderBrush="Transparent"/>
         </Grid>
     </Grid>
 </Page>
