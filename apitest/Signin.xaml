@@ -4,6 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:apitest"
+      xmlns:winapp="clr-namespace:winapp"
       mc:Ignorable="d" 
       Title="Sign In" Height="650" Width="400">
 
@@ -47,6 +48,8 @@
                 </Trigger>
             </ControlTemplate.Triggers>
         </ControlTemplate>
+        
+        
 
         <ControlTemplate x:Key="ButtonTemplate" TargetType="{x:Type Button}">
             <Border Background="{TemplateBinding Background}" 
@@ -67,6 +70,71 @@
             </ControlTemplate.Triggers>
         </ControlTemplate>
 
+        <Style x:Key="TBPlaceHolder" TargetType="{x:Type TextBox}">
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TextBox}">
+                        <Border x:Name="Border"
+                                Height="50" Width="260"
+                                Padding="20 0 0 0"
+                                CornerRadius="15"
+                                Background="White"> 
+                            <Grid>
+                                <ScrollViewer x:Name="PART_ContentHost"
+                                              VerticalAlignment="Center"
+                                              Cursor="IBeam"/>
+                                <TextBlock x:Name="Tag" 
+                                           FontSize="15"
+                                           Foreground="LightGray"
+                                           VerticalAlignment="Center"
+                                           Visibility="Collapsed"
+                                           Text="{TemplateBinding Tag}"/>
+                            </Grid>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="Text" Value="">
+                                <Setter TargetName="Tag" Property="Visibility" Value="Visible"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key ="PWPlaceHolder" TargetType="{x:Type PasswordBox}">
+            <Setter Property="winapp:PasswordBoxMonitor.IsMonitoring" Value="True"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type PasswordBox}">
+                        <Border Height="50" Width="300"
+                                Padding="20 0 0 0"
+                                CornerRadius="15"
+                                Background="White">
+                            <Grid>
+                                <!--Grid 사용 이유 = 여러가지 속성을 넣기 위함-->
+                                <ScrollViewer x:Name="PART_ContentHost"
+                                          VerticalAlignment="Center"
+                                          Cursor="IBeam"/>
+                                <!--Scrollviewer나 Decorator를 많이 사용함-->
+                                <TextBlock x:Name="WaterMark" 
+                                           FontSize="15"
+                                           Foreground="LightGray"
+                                           VerticalAlignment="Center"
+                                           Visibility="Collapsed"
+                                           Text="{TemplateBinding Tag}"/>
+                            </Grid>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="winapp:PasswordBoxMonitor.PasswordLength" Value="0">
+                                <Setter TargetName="WaterMark" Property="Visibility" Value="Visible"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
     </Page.Resources>
     
     
@@ -76,10 +144,13 @@
             <Rectangle Fill="#FF109E9E" HorizontalAlignment="Left" Height="507" Stroke="Transparent" VerticalAlignment="Bottom" Width="402" Margin="0,0,0,146" />
         </Border>
 
-        <TextBox x:Name="tbID" Margin="69,296,69,307" FontSize="20" VerticalContentAlignment="Center" BorderBrush="Transparent"
+        <!--<TextBox x:Name="tbID" Margin="69,296,69,307" FontSize="20" VerticalContentAlignment="Center" BorderBrush="Transparent"
                   FontFamily="/.../Resources/NanumSquare_acR.ttf/.../" Template="{StaticResource TextBoxBaseControlTemplate}"/>
         <PasswordBox x:Name="tbPassword" Margin="69,375,69,225" FontSize="20" PasswordChar="●" VerticalAlignment="Center" Height="50" BorderBrush="Transparent"
-                      VerticalContentAlignment="Center" FontFamily="/.../Resources/NanumSquare_acR.ttf/.../" Template="{StaticResource PasswordBoxTemplate}"/>
+                      VerticalContentAlignment="Center" FontFamily="/.../Resources/NanumSquare_acR.ttf/.../" Template="{StaticResource PasswordBoxTemplate}"/>-->
+        <TextBox x:Name="tbID" Style="{StaticResource TBPlaceHolder}" Tag="아이디"/>
+        <PasswordBox x:Name="tbPassword" Margin="70,375,70,225" FontSize="20" PasswordChar="●" 
+                     Style="{StaticResource PWPlaceHolder}" Tag="비밀번호"/>
 
         <Button x:Name="btnLogin" Click="btnLogin_Click" Margin="69,480,69,120" Content="Sign In" RenderTransformOrigin="0.5,0.5" Background="#FF085252" Foreground="White" FontSize="20"
                 BorderBrush="Transparent" FontFamily="/.../Resources/NanumSquare_acR.ttf/.../" Template="{StaticResource ButtonTemplate}"/>
@@ -87,9 +158,6 @@
         <Button x:Name="btnRegister" Content="Sign Up" Click="btnRegister_Click" Margin="270,533,77,93" Background="Transparent" RenderTransformOrigin="0.493,0.238" BorderThickness="0"/>
 
         <CheckBox x:Name="chkAutoLogin" BorderBrush="Transparent" Content="Auto Login" Margin="69,450,250,184"/>
-
-        <TextBlock HorizontalAlignment="Left" Margin="69,280,0,0" TextWrapping="Wrap" Text="ID" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" Margin="69,360,0,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top"/>
         <TextBlock Height="50" Margin="69,106,69,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="50" TextAlignment="Center" Foreground="White" Text="Shareboard"
                    FontFamily="/.../Resources/NanumSquare_acR.ttf/.../"/>
     </Grid>
