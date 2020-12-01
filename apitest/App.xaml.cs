@@ -17,5 +17,6 @@ namespace winapp
     {
         public static LoginViewModel LoginViewModel = new LoginViewModel();
         public static RegisterViewModel RegisterViewModel = new RegisterViewModel();
+        public static PullViewModel PullViewModel = new PullViewModel();
     }
 }

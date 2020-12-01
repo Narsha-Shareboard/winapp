@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{A33FC679-BB7C-45C8-8112-CD4F7DDB3F9D}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>apitest</RootNamespace>
-    <AssemblyName>apitest</AssemblyName>
+    <RootNamespace>winapp</RootNamespace>
+    <AssemblyName>winapp</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -75,12 +75,17 @@
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Model\PullModel.cs" />
+    <Compile Include="Model\PushModel.cs" />
     <Compile Include="Model\RegisterModel.cs" />
+    <Compile Include="WPage\Pull.xaml.cs">
+      <DependentUpon>Pull.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ServerSetting.cs" />
-    <Compile Include="Signin.xaml.cs">
+    <Compile Include="WPage\Signin.xaml.cs">
       <DependentUpon>Signin.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Signup.xaml.cs">
+    <Compile Include="WPage\Signup.xaml.cs">
       <DependentUpon>Signup.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\LoginViewModel.cs" />
@@ -88,22 +93,28 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="ViewModel\PullViewModel.cs" />
+    <Compile Include="ViewModel\PushViewModel.cs" />
     <Compile Include="ViewModel\RegisterViewModel.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Signin.xaml">
+    <Page Include="WPage\Pull.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Signup.xaml">
+    <Page Include="WPage\Signin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPage\Signup.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="manager\RestManager.cs" />
+    <Compile Include="Manager\RestManager.cs" />
     <Compile Include="Model\LoginModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

@@ -11,4 +11,18 @@ namespace winapp.Model
         public string result { get; set; }
         public string token { get; set; }
     }
+
+    public class TokenModel
+    {
+        private static TokenModel instance = null;
+        public static TokenModel Get()
+        {
+            if (instance == null)
+            {
+                instance = new TokenModel();
+            }
+            return instance;
+        }
+        public string token { get; set; }
+    }
 }

@@ -18,10 +18,10 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace winapp
+namespace winapp.WPage
 {
     /// <summary>
-    /// Signup.xaml에 대한 상호 작용 논리
+    /// Interaction logic for Signin.xaml
     /// </summary>
     public partial class Signup : Page
     {

@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using winapp.Properties;
 
 namespace winapp.ViewModel
 {
@@ -16,12 +17,6 @@ namespace winapp.ViewModel
     {
         RestManager restmanager = new RestManager();
 
-        private string _token;
-        public string Token
-        {
-            get => _token;
-            set => SetProperty(ref _token, value);
-        }
         public string Result;
 
         public async Task Login(string Id, string Password)
@@ -30,10 +25,15 @@ namespace winapp.ViewModel
             jobj.Add("userId", Id);
             jobj.Add("password", Password);
             var loginResult = await restmanager.RestRequest<LoginModel>(jobj.ToString(), null, Method.POST, "/signIn");
-            Token = loginResult.token;
+            TokenModel.Get().token = loginResult.token;
             if(loginResult.result == "1")
             {
                 MessageBox.Show("로그인을 성공했습니다.", "SUCCESS");
+                if (Settings.Default.isALChecked == true)
+                {
+                    Settings.Default.token = TokenModel.Get().token;
+                    Settings.Default.Save();
+                }
             }
             else
             {

@@ -1,4 +1,9 @@
-﻿using System;
+﻿using winapp.manager;
+using winapp.Model;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using RestSharp;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,8 +17,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using winapp.Properties;
 
-namespace winapp
+namespace winapp.WPage
 {
     /// <summary>
     /// Interaction logic for Signin.xaml
@@ -38,6 +44,10 @@ namespace winapp
         private void Signin_Loaded(object sender, RoutedEventArgs e)
         {
             DataContext = App.LoginViewModel;
+
+
+
+            chkAutoLogin.IsChecked = Settings.Default.isALChecked;
         }
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
@@ -60,6 +70,12 @@ namespace winapp
         private void btnFindPW_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("관리자에게 문의하세요.", "ERROR");
+        }
+
+        private void chkAutoLogin_Checked(object sender, RoutedEventArgs e)
+        {
+            Settings.Default.isALChecked = !Settings.Default.isALChecked;
+            Settings.Default.Save();
         }
     }
     public class PasswordBoxMonitor : DependencyObject

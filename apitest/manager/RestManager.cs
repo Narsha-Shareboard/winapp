@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.UI.WebControls;
+using winapp.Model;
 
 namespace winapp.manager
 {
@@ -27,6 +28,11 @@ namespace winapp.manager
         {
             var restClient = new RestClient(ServerSetting.ServerUri);
             var request = new RestRequest(reosurces, method);
+
+            if (TokenModel.Get().token != "")
+            {
+                request.AddHeader("Authorization", TokenModel.Get().token);
+            }
 
             if (jsondata != null)
             {

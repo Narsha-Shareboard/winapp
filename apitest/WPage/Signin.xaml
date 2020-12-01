@@ -1,10 +1,9 @@
-﻿<Page x:Class="winapp.Signin"
+﻿<Page x:Class="winapp.WPage.Signin"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:apitest"
-      xmlns:winapp="clr-namespace:winapp"
+      xmlns:local="clr-namespace:winapp.WPage"
       mc:Ignorable="d" 
       Title="Sign In" Height="650" Width="400">
 
@@ -13,7 +12,7 @@
             <Border Background="{TemplateBinding Background}" 
                 x:Name="Bd" BorderBrush="Transparent"
                 BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="15">
-                <ScrollViewer x:Name="PART_ContentHost"/>
+                <ScrollViewer x:Name="PART_ContentHost" Cursor="IBeam"/>
             </Border>
             <ControlTemplate.Triggers>
                 <Trigger Property="IsEnabled" Value="False">
@@ -33,7 +32,7 @@
             <Border Background="{TemplateBinding Background}" 
                 x:Name="Bd" BorderBrush="Transparent"
                 BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="15">
-                <ScrollViewer x:Name="PART_ContentHost"/>
+                <ScrollViewer x:Name="PART_ContentHost" Cursor="IBeam"/>
             </Border>
             <ControlTemplate.Triggers>
                 <Trigger Property="IsEnabled" Value="False">
@@ -53,8 +52,15 @@
             <Border Background="{TemplateBinding Background}" 
                 x:Name="Bd" BorderBrush="Transparent"
                 BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="15">
+                <TextBlock x:Name="Tag" Text="{TemplateBinding Tag}"
+                           FontSize="30" HorizontalAlignment="Center"
+                           Foreground="White"
+                           VerticalAlignment="Center"/>
             </Border>
             <ControlTemplate.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#BEE6FD" TargetName="Bd"/>
+                </Trigger>
                 <Trigger Property="IsEnabled" Value="False">
                     <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" TargetName="Bd"/>
                     <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
@@ -64,6 +70,20 @@
                 </Trigger>
                 <Trigger Property="Height" Value="Auto">
                     <Setter Property="MinHeight" Value="20"/>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+
+        <ControlTemplate x:Key="ButtonTemplate2" TargetType="{x:Type Button}">
+            <TextBlock x:Name="Tag" Text="{TemplateBinding Tag}"
+                           FontSize="12" HorizontalAlignment="Center"
+                           Foreground="#9ABCD9" Cursor="Hand"
+                           VerticalAlignment="Center"/>
+
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="Transparent"/>
+                    <Setter Property="TextDecorations" Value="Underline" TargetName="Tag"/>
                 </Trigger>
             </ControlTemplate.Triggers>
         </ControlTemplate>
@@ -101,7 +121,7 @@
         </Style>
 
         <Style x:Key ="PWPlaceHolder" TargetType="{x:Type PasswordBox}">
-            <Setter Property="winapp:PasswordBoxMonitor.IsMonitoring" Value="True"/>
+            <Setter Property="local:PasswordBoxMonitor.IsMonitoring" Value="True"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type PasswordBox}">
@@ -124,7 +144,7 @@
                             </Grid>
                         </Border>
                         <ControlTemplate.Triggers>
-                            <Trigger Property="winapp:PasswordBoxMonitor.PasswordLength" Value="0">
+                            <Trigger Property="local:PasswordBoxMonitor.PasswordLength" Value="0">
                                 <Setter TargetName="WaterMark" Property="Visibility" Value="Visible"/>
                             </Trigger>
                         </ControlTemplate.Triggers>
@@ -147,15 +167,15 @@
         <PasswordBox x:Name="tbPassword" Margin="69,375,69,225" FontSize="20" PasswordChar="●" VerticalAlignment="Center" Height="50" BorderBrush="Transparent"
                       VerticalContentAlignment="Center" FontFamily="/.../Resources/NanumSquare_acR.ttf/.../" Template="{StaticResource PasswordBoxTemplate}"/>-->
         <TextBox x:Name="tbID" Style="{StaticResource TBPlaceHolder}" Tag="ID"/>
-        <PasswordBox x:Name="tbPassword" Margin="70,375,70,225" FontSize="15" PasswordChar="●"  Style="{StaticResource PWPlaceHolder}" Tag="Password"/>
+        <PasswordBox x:Name="tbPassword" Margin="70,375,70,225" FontSize="15" PasswordChar="●"  Style="{StaticResource PWPlaceHolder}" Tag="Password" Cursor="IBeam"/>
+        <Button x:Name="btnLogin" Cursor="Hand" Click="btnLogin_Click" Margin="70,478,70,122" Content="Sign In" RenderTransformOrigin="0.5,0.5" Background="#FF085252" Foreground="White" FontSize="20"
+                  FontFamily="/.../Resources/NanumSquare_acR.ttf/.../" Tag="Sign In" Template="{StaticResource ButtonTemplate}"/>
 
-        <Button x:Name="btnLogin" Click="btnLogin_Click" Margin="70,478,70,122" Content="Sign In" RenderTransformOrigin="0.5,0.5" Background="#FF085252" Foreground="White" FontSize="20"
-                BorderBrush="Transparent" FontFamily="/.../Resources/NanumSquare_acR.ttf/.../" Template="{StaticResource ButtonTemplate}"/>
 
-        <Button x:Name="btnRegister" Content="Sign Up" Click="btnRegister_Click" Margin="280,533,70,96" Background="Transparent" RenderTransformOrigin="0.396,3.19" BorderThickness="0" Foreground="#9ABCD9"/>
-        <Button x:Name="btnFindPW" Content="Forgot Password?" Click="btnFindPW_Click" Margin="70,533,230,96" Background="Transparent" BorderThickness="0" Foreground="#9ABCD9"/>
+        <Button x:Name="btnRegister" Tag="Sign Up" Click="btnRegister_Click" Margin="280,533,70,96" RenderTransformOrigin="0.396,3.19" Template="{StaticResource ButtonTemplate2}"/>
+        <Button x:Name="btnFindPW" Tag="Forgot Password?" Click="btnFindPW_Click" Margin="70,533,230,96" Template="{StaticResource ButtonTemplate2}"/>
 
-        <CheckBox x:Name="chkAutoLogin" BorderBrush="Transparent" Content="Auto Login" Margin="70,444,249,190"/>
+        <CheckBox x:Name="chkAutoLogin" BorderBrush="Transparent" Content="Auto Login" Margin="70,444,249,190" Checked="chkAutoLogin_Checked"/>
         <TextBlock Height="55" Margin="70,130,70,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="50" TextAlignment="Center" Foreground="White" Text="Shareboard"
                    FontFamily="/.../Resources/NanumSquare_acR.ttf/.../"/>
     </Grid>
