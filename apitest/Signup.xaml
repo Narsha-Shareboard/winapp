@@ -11,7 +11,7 @@
         <ControlTemplate x:Key="TextBoxBaseControlTemplate" TargetType="{x:Type TextBoxBase}">
             <Border Background="{TemplateBinding Background}" 
                 x:Name="Bd" BorderBrush="Transparent"
-                BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="20">
+                BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="15">
                 <ScrollViewer x:Name="PART_ContentHost"/>
             </Border>
             <ControlTemplate.Triggers>
@@ -31,7 +31,7 @@
         <ControlTemplate x:Key="PasswordBoxTemplate" TargetType="{x:Type PasswordBox}">
             <Border Background="{TemplateBinding Background}" 
                 x:Name="Bd" BorderBrush="Transparent"
-                BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="20">
+                BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="15">
                 <ScrollViewer x:Name="PART_ContentHost"/>
             </Border>
             <ControlTemplate.Triggers>

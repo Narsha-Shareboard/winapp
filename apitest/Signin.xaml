@@ -48,6 +48,24 @@
             </ControlTemplate.Triggers>
         </ControlTemplate>
 
+        <ControlTemplate x:Key="ButtonTemplate" TargetType="{x:Type Button}">
+            <Border Background="{TemplateBinding Background}" 
+                x:Name="Bd" BorderBrush="Transparent"
+                BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="15">
+            </Border>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsEnabled" Value="False">
+                    <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" TargetName="Bd"/>
+                    <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+                </Trigger>
+                <Trigger Property="Width" Value="Auto">
+                    <Setter Property="MinWidth" Value="100"/>
+                </Trigger>
+                <Trigger Property="Height" Value="Auto">
+                    <Setter Property="MinHeight" Value="20"/>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
 
     </Page.Resources>
     
@@ -64,8 +82,8 @@
                       VerticalContentAlignment="Center" FontFamily="/.../Resources/NanumSquare_acR.ttf/.../" Template="{StaticResource PasswordBoxTemplate}"/>
 
         <Button x:Name="btnLogin" Click="btnLogin_Click" Margin="69,480,69,120" Content="Sign In" RenderTransformOrigin="0.5,0.5" Background="#FF085252" Foreground="White" FontSize="20"
-                BorderBrush="Transparent" FontFamily="/.../Resources/NanumSquare_acR.ttf/.../"/>
-        
+                BorderBrush="Transparent" FontFamily="/.../Resources/NanumSquare_acR.ttf/.../" Template="{StaticResource ButtonTemplate}"/>
+
         <Button x:Name="btnRegister" Content="Sign Up" Click="btnRegister_Click" Margin="270,533,77,93" Background="Transparent" RenderTransformOrigin="0.493,0.238" BorderThickness="0"/>
 
         <CheckBox x:Name="chkAutoLogin" BorderBrush="Transparent" Content="Auto Login" Margin="69,450,250,184"/>
