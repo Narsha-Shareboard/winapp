@@ -7,7 +7,30 @@
       d:DesignHeight="650" d:DesignWidth="400"
       Title="Pull">
 
+    <Page.Resources>
+        <ControlTemplate x:Key="ButtonTemplate2" TargetType="{x:Type Button}">
+            <TextBlock x:Name="Tag" Text="{TemplateBinding Tag}"
+                           FontSize="20" HorizontalAlignment="Right"
+                           Foreground="White" Cursor="Hand"
+                           VerticalAlignment="Center" 
+                           Background="Transparent"/>
+
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="Transparent"/>
+                    <Setter Property="TextDecorations" Value="Underline" TargetName="Tag"/>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+    </Page.Resources>
+
     <Grid>
-        <TextBox HorizontalAlignment="Left" Height="630" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="380"/>
+        <Canvas x:Name="Back" Height="650" Width="400" Background="White">
+            <Canvas x:Name="MenuBar" Width="100" Height="650" Background="#085252">
+                <Button x:Name="btnPush" Width="100" Height="40" Click="btnPush_Click" BorderThickness="0" Tag="내보내기" Template="{StaticResource ButtonTemplate2}" Canvas.Top="151" Canvas.Left="1"/>
+                <Button x:Name="btnPull" Width="100" Height="40" Click="btnPull_Click" BorderThickness="0" Tag="가져오기" Template="{StaticResource ButtonTemplate2}" Canvas.Left="-3" Canvas.Top="220"/>
+                <Button x:Name="btnDevice" Width="100" Height="40" Click="btnDevice_Click" BorderThickness="0" Tag="장치" Template="{StaticResource ButtonTemplate2}" Canvas.Left="-1" Canvas.Top="303"/>
+            </Canvas>
+        </Canvas>
     </Grid>
 </Page>

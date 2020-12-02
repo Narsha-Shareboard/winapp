@@ -43,5 +43,20 @@ namespace winapp.WPage
         {
             DataContext = App.PullViewModel;
         }
+
+        private void btnPush_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnPull_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnDevice_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
