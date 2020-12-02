@@ -75,5 +75,10 @@ namespace winapp.WPage
         {
 
         }
+
+        private void MenuBar_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

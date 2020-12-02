@@ -17,8 +17,11 @@
 
             <ControlTemplate.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="Background" Value="Transparent"/>
-                    <Setter Property="TextDecorations" Value="Underline" TargetName="Tag"/>
+                    <Setter Property="Background" Value="#BEE6FD"/>
+                </Trigger>
+                <Trigger Property="IsPressed" Value="True">
+                    <Setter Property="Background" Value="White"/>
+                    <Setter Property="Foreground" Value="#085252"/>
                 </Trigger>
             </ControlTemplate.Triggers>
         </ControlTemplate>
@@ -29,6 +32,32 @@
                 BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="15">
                 <TextBlock x:Name="Tag" Text="{TemplateBinding Tag}"
                            FontSize="13" HorizontalAlignment="Center"
+                           Foreground="White"
+                           VerticalAlignment="Center"/>
+            </Border>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#BEE6FD" TargetName="Bd"/>
+                </Trigger>
+                <Trigger Property="IsEnabled" Value="False">
+                    <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" TargetName="Bd"/>
+                    <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+                </Trigger>
+                <Trigger Property="Width" Value="Auto">
+                    <Setter Property="MinWidth" Value="100"/>
+                </Trigger>
+                <Trigger Property="Height" Value="Auto">
+                    <Setter Property="MinHeight" Value="20"/>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+
+        <ControlTemplate x:Key="ButtonTemplate" TargetType="{x:Type Button}">
+            <Border Background="{TemplateBinding Background}" 
+                x:Name="Bd" BorderBrush="Transparent"
+                BorderThickness="{TemplateBinding BorderThickness}">
+                <TextBlock x:Name="Tag" Text="{TemplateBinding Tag}"
+                           FontSize="20" HorizontalAlignment="Center"
                            Foreground="White"
                            VerticalAlignment="Center"/>
             </Border>
@@ -61,18 +90,16 @@
                 <Button x:Name="btnMenu" Width="30" Height="30" Click="btnMenu_Click" BorderThickness="0" Background="Transparent">
                     <Image Source="C:\Users\Hyeon\Desktop\개발\Git\winapp\apitest\Resources\Hambuger_Button_Menu.png"/>
                 </Button>
-            
-                        <Button x:Name="ListFinder" Width="30" Height="30" Click="ListFinder_Click" Background="Transparent" BorderThickness="0" Canvas.Left="270" Canvas.Top="25" >
-            <Image Source="C:\Users\Hyeon\Desktop\개발\Git\winapp\apitest\Resources\돋보기.png"/>
-        </Button>
 
-        <Button x:Name="PushBTN" Width="70" Height="30" Background="#085252" Template="{StaticResource TemplatePushBtn}" Canvas.Left="310" Canvas.Top="25"
+                <Button x:Name="ListFinder" Width="30" Height="30" Click="ListFinder_Click" Background="Transparent" BorderThickness="0" Canvas.Left="270" Canvas.Top="25" >
+                    <Image Source="C:\Users\Hyeon\Desktop\개발\Git\winapp\apitest\Resources\돋보기.png"/>
+                </Button>
+
+                <Button x:Name="PushBTN" Width="70" Height="30" Background="#085252" Template="{StaticResource TemplatePushBtn}" Canvas.Left="310" Canvas.Top="25"
                         Tag="내보내기"/>
-
             </Canvas>
-
         </Canvas>
-        
+
 
 
         <TextBlock x:Name="Title_Push" Width="120" Height="40" Text="내보내기" FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="105,25,175,585"
@@ -80,7 +107,9 @@
 
         <ScrollViewer x:Name="PushListScroll" Height="550" Width="300" VerticalAlignment="Bottom" HorizontalAlignment="Right" VerticalScrollBarVisibility="Disabled">
             <!--VerticalScrollBarVisibillity = 우측의 스크롤바를 숨겨줌 , 하단의 스크롤바를 안보이게 해주기 위해서는 HoriznalScrollBarVisibillity 사용해주면 됨-->
-
+            <Rectangle x:Name="PushContentList" Width="300" Height="70" Stroke="LightGray" StrokeThickness="2">
+                <TextBlock x:Name="ListContent" >이것은 테스트용 컨텐츠입니다</TextBlock>
+            </Rectangle>
         </ScrollViewer>
     </Grid>
 </Page>
