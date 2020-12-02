@@ -1,0 +1,38 @@
+﻿<Page x:Class="winapp.WPage.Pull"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="650" d:DesignWidth="400"
+      Title="Pull">
+
+    <Page.Resources>
+        <ControlTemplate x:Key="ButtonTemplate2" TargetType="{x:Type Button}">
+            <TextBlock x:Name="Tag" Text="{TemplateBinding Tag}"
+                           FontSize="20" HorizontalAlignment="Right"
+                           Foreground="White" Cursor="Hand"
+                           VerticalAlignment="Center" 
+                           Background="Transparent"/>
+
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="Transparent"/>
+                    <Setter Property="TextDecorations" Value="Underline" TargetName="Tag"/>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+    </Page.Resources>
+
+    <Grid>
+        <Canvas x:Name="Back" Height="650" Width="400" Background="White">
+            <Canvas x:Name="MenuBar" Width="110" Height="650" Background="#085252">
+                <Button x:Name="btnPush" Width="100" Height="40" Click="btnPush_Click" BorderThickness="0" Tag="내보내기" Template="{StaticResource ButtonTemplate2}" Canvas.Top="125"/>
+                <Button x:Name="btnPull" Width="100" Height="40" Click="btnPull_Click" BorderThickness="0" Tag="가져오기" Template="{StaticResource ButtonTemplate2}" Canvas.Top="195"/>
+                <Button x:Name="btnDevice" Width="100" Height="40" Click="btnDevice_Click" BorderThickness="0" Tag="장치" Template="{StaticResource ButtonTemplate2}" Canvas.Top="265"/>
+                <Button x:Name="btnLogout" Width="100" Height="40" Click="btnLogout_Click" BorderThickness="0" Tag="로그아웃" Template="{StaticResource ButtonTemplate2}" Canvas.Top="600"/>
+                <Button x:Name="btnMenu" Width="40" Height="30" Click="btnMenu_Click" BorderThickness="0" Canvas.Left="10" Canvas.Top="10"/>
+            </Canvas>
+        </Canvas>
+    </Grid>
+</Page>

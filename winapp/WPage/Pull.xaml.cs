@@ -17,6 +17,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using winapp.Properties;
 
 namespace winapp.WPage
 {
@@ -44,11 +45,14 @@ namespace winapp.WPage
             DataContext = App.PullViewModel;
         }
 
+        private void btnMenu_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
         private void btnPush_Click(object sender, RoutedEventArgs e)
         {
-            if(sender == btnPush)
-            {
-            }
+            
         }
 
         private void btnPull_Click(object sender, RoutedEventArgs e)
@@ -61,24 +65,12 @@ namespace winapp.WPage
 
         }
 
-        private void btnMenu_Click(object sender, RoutedEventArgs e)
+        private void btnLogout_Click(object sender, RoutedEventArgs e)
         {
-
-        }
-
-        private void btnMenu_Click_1(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void ListFinder_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void MenuBar_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
+            _mainWindow.NavigatePage(new Signin(_mainWindow));
+            Settings.Default.token = "";
+            Settings.Default.isALChecked = false;
+            Settings.Default.Save();
         }
     }
 }

@@ -171,6 +171,7 @@
         <Button x:Name="btnLogin" Cursor="Hand" Click="btnLogin_Click" Margin="70,478,70,122" Content="Sign In" RenderTransformOrigin="0.5,0.5" Background="#FF085252" Foreground="White" FontSize="20"
                   FontFamily="/.../Resources/NanumSquare_acR.ttf/.../" Tag="Sign In" Template="{StaticResource ButtonTemplate}"/>
 
+
         <Button x:Name="btnRegister" Tag="Sign Up" Click="btnRegister_Click" Margin="280,533,70,96" RenderTransformOrigin="0.396,3.19" Template="{StaticResource ButtonTemplate2}"/>
         <Button x:Name="btnFindPW" Tag="Forgot Password?" Click="btnFindPW_Click" Margin="70,533,230,96" Template="{StaticResource ButtonTemplate2}"/>
 
