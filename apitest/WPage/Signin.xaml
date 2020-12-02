@@ -53,7 +53,7 @@
                 x:Name="Bd" BorderBrush="Transparent"
                 BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="15">
                 <TextBlock x:Name="Tag" Text="{TemplateBinding Tag}"
-                           FontSize="30" HorizontalAlignment="Center"
+                           FontSize="25" HorizontalAlignment="Center"
                            Foreground="White"
                            VerticalAlignment="Center"/>
             </Border>

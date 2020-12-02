@@ -25,9 +25,23 @@ namespace winapp.WPage
     /// </summary>
     public partial class Pull : Page
     {
+        private readonly MainWindow _mainWindow;
+
+        public Pull(MainWindow mainWindow)
+        {
+            InitializeComponent();
+            _mainWindow = mainWindow;
+            Loaded += Signin_Loaded;
+        }
         public Pull()
         {
             InitializeComponent();
+            Loaded += Signin_Loaded;
+        }
+
+        private void Signin_Loaded(object sender, RoutedEventArgs e)
+        {
+            DataContext = App.PullViewModel;
         }
     }
 }

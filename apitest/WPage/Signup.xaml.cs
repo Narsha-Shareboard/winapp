@@ -46,7 +46,15 @@ namespace winapp.WPage
 
         private void btnRegister_Click(object sender, RoutedEventArgs e)
         {
-            if(tbPassword.Password == tbCheck.Password)
+            if (tbID.Text == "")
+            {
+                MessageBox.Show("아이디를 입력해주세요.", "ERROR");
+            }
+            else if (tbPassword.Password == "")
+            {
+                MessageBox.Show("비밀번호를 입력해주세요.", "ERROR");
+            }
+            else if(tbPassword.Password == tbCheck.Password)
             {
                 onRegister();
             }
@@ -59,13 +67,17 @@ namespace winapp.WPage
         private async void onRegister()
         {
             await App.RegisterViewModel.Register(tbID.Text, tbPassword.Password);
-            _mainWindow.NavigatePage(new Signin(_mainWindow));
+            if (RegisterCheck.isValidAccess == true)
+            {
+                _mainWindow.NavigatePage(new Signin(_mainWindow));
+            }
         }
 
         private void btnBack(object sender, RoutedEventArgs e)
         {
             _mainWindow.NavigatePage(new Signin(_mainWindow));
         }
+
         public class PasswordBoxMonitor : DependencyObject
         {
             public static bool GetIsMonitoring(DependencyObject obj)

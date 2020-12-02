@@ -75,9 +75,11 @@
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Model\AutoLoginModel.cs" />
     <Compile Include="Model\PullModel.cs" />
     <Compile Include="Model\PushModel.cs" />
     <Compile Include="Model\RegisterModel.cs" />
+    <Compile Include="ViewModel\AutoLoginViewModel.cs" />
     <Compile Include="WPage\Pull.xaml.cs">
       <DependentUpon>Pull.xaml</DependentUpon>
     </Compile>

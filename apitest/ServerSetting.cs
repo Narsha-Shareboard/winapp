@@ -8,6 +8,6 @@ namespace winapp
 {
     public class ServerSetting
     {
-        public static string ServerUri = "http://10.80.163.75:8080";
+        public static string ServerUri = "http://10.80.163.222:8080";
     }
 }

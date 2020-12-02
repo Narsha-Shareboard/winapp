@@ -8,6 +8,6 @@
       Title="Pull">
 
     <Grid>
-        
+        <TextBox HorizontalAlignment="Left" Height="630" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="380"/>
     </Grid>
 </Page>

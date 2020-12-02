@@ -29,6 +29,7 @@ namespace winapp.ViewModel
             if(loginResult.result == "1")
             {
                 MessageBox.Show("로그인을 성공했습니다.", "SUCCESS");
+                LoginCheck.isValidAccess = true;
                 if (Settings.Default.isALChecked == true)
                 {
                     Settings.Default.token = TokenModel.Get().token;

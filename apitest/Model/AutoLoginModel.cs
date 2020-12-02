@@ -6,28 +6,28 @@ using System.Threading.Tasks;
 
 namespace winapp.Model
 {
-    public class LoginModel
+    public class AutoLoginModel
     {
+        public string userId { get; set; }
         public string result { get; set; }
-        public string token { get; set; }
     }
 
-    public class LoginCheck
+    public class AutoLoginCheck
     {
         public static bool isValidAccess = false;
     }
 
-    public class TokenModel
+    public class IdModel
     {
-        private static TokenModel instance = null;
-        public static TokenModel Get()
+        private static IdModel instance = null;
+        public static IdModel Get()
         {
             if (instance == null)
             {
-                instance = new TokenModel();
+                instance = new IdModel();
             }
             return instance;
         }
-        public string token { get; set; }
+        public string userId { get; set; }
     }
 }

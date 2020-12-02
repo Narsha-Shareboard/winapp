@@ -11,4 +11,9 @@ namespace winapp.Model
     {
         public string result { get; set; }
     }
+
+    public class RegisterCheck
+    {
+        public static bool isValidAccess = false;
+    }
 }

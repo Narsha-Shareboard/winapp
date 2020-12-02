@@ -52,8 +52,15 @@
             <Border Background="{TemplateBinding Background}" 
                 x:Name="Bd" BorderBrush="Transparent"
                 BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="15">
+                <TextBlock x:Name="Tag" Text="{TemplateBinding Tag}"
+                           FontSize="25" HorizontalAlignment="Center"
+                           Foreground="White"
+                           VerticalAlignment="Center"/>
             </Border>
             <ControlTemplate.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#BEE6FD" TargetName="Bd"/>
+                </Trigger>
                 <Trigger Property="IsEnabled" Value="False">
                     <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" TargetName="Bd"/>
                     <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
@@ -176,11 +183,11 @@
             <TextBox x:Name="tbID" Height="50" Margin="70,235,70,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.IsSharedSizeScope="True" FontSize="20" FontFamily="Tmoney RoundWind ExtraBold" BorderBrush="Transparent"
                      VerticalContentAlignment="Center" Style="{StaticResource TBPlaceHolder}" Tag="ID"/>
             <PasswordBox x:Name="tbPassword" Height="50" Margin="70,315,70,0" VerticalAlignment="Top" FontSize="20" FontFamily="/.../Resources/NanumSquare_acR.ttf/.../" PasswordChar="●" BorderBrush="Transparent"
-                         VerticalContentAlignment="Center" Style="{StaticResource PWPlaceHolder}" Tag="Password"/>
+                         VerticalContentAlignment="Center" Style="{StaticResource PWPlaceHolder}" Tag="Password" Cursor="IBeam"/>
             <PasswordBox x:Name="tbCheck" Height="50" Margin="70,395,70,0" VerticalAlignment="Top" FontSize="20" FontFamily="/.../Resources/NanumSquare_acR.ttf/.../" PasswordChar="●" BorderBrush="Transparent"
-                         VerticalContentAlignment="Center" Style="{StaticResource Confirm}" Tag="Confirm"/>
+                         VerticalContentAlignment="Center" Style="{StaticResource Confirm}" Tag="Confirm" Cursor="IBeam"/>
 
-            <Button Content="Sign Up" Click="btnRegister_Click" Height="50" Margin="70,478,70,0" VerticalAlignment="Top" FontSize="24" Background="#FF085252" Grid.IsSharedSizeScope="True" Foreground="White" BorderBrush="Transparent"/>
+            <Button Click="btnRegister_Click" Cursor="Hand" Height="50" Margin="70,478,70,0" VerticalAlignment="Top" FontSize="24" Background="#FF085252" Grid.IsSharedSizeScope="True" Foreground="White" BorderBrush="Transparent" Template="{StaticResource ButtonTemplate}" Tag="Sign Up"/>
             <Button Content="◀" Click="btnBack" Height="30" Margin="360,610,10,10" FontSize="15" Background="#FF085252" Grid.IsSharedSizeScope="True" Foreground="White" BorderBrush="Transparent"/>
         </Grid>
     </Grid>

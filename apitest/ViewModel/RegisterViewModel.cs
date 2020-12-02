@@ -1,5 +1,6 @@
 ﻿using winapp.manager;
 using winapp.Model;
+using winapp.WPage;
 using Newtonsoft.Json.Linq;
 using Prism.Mvvm;
 using RestSharp;
@@ -29,7 +30,9 @@ namespace winapp.ViewModel
             if (RegisterResult.result == "1")
             {
                 MessageBox.Show("회원가입을 성공했습니다.", "SUCCESS");
+                RegisterCheck.isValidAccess = true;
             }
+
             else
             {
                 MessageBox.Show("이미 존재하는 아이디입니다.", "ERROR");

@@ -44,27 +44,50 @@ namespace winapp.WPage
         private void Signin_Loaded(object sender, RoutedEventArgs e)
         {
             DataContext = App.LoginViewModel;
-
-
-
-            chkAutoLogin.IsChecked = Settings.Default.isALChecked;
+            if (Settings.Default.isALChecked == true)
+            {
+                autoLogin();
+                if (AutoLoginCheck.isValidAccess == true)
+                {
+                    _mainWindow.NavigatePage(new Pull(_mainWindow));
+                }
+            }
         }
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
-            onLogin();
+            if (tbID.Text == "")
+            {
+                MessageBox.Show("아이디를 입력해주세요.", "ERROR");
+            }
+            else if (tbPassword.Password == "")
+            {
+                MessageBox.Show("비밀번호를 입력해주세요.", "ERROR");
+            }
+            else
+            {
+                onLogin();
+            }
         }
 
         private void btnRegister_Click(object sender, RoutedEventArgs e)
         {
             Signup page = new Signup(_mainWindow);
             _mainWindow.NavigatePage(page);
-
         }
 
         private async void onLogin()
         {
             await App.LoginViewModel.Login(tbID.Text, tbPassword.Password);
+            if (LoginCheck.isValidAccess == true)
+            {
+                _mainWindow.NavigatePage(new Pull(_mainWindow));
+            }
+        }
+        
+        private async void autoLogin()
+        {
+            await App.AutoLoginViewModel.AutoLogin();
         }
 
         private void btnFindPW_Click(object sender, RoutedEventArgs e)
@@ -75,7 +98,6 @@ namespace winapp.WPage
         private void chkAutoLogin_Checked(object sender, RoutedEventArgs e)
         {
             Settings.Default.isALChecked = !Settings.Default.isALChecked;
-            Settings.Default.Save();
         }
     }
     public class PasswordBoxMonitor : DependencyObject
