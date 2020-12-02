@@ -30,7 +30,7 @@
                 <Button x:Name="btnPush" Width="100" Height="40" Click="btnPush_Click" BorderThickness="0" Tag="내보내기" Template="{StaticResource ButtonTemplate2}" Canvas.Top="125"/>
                 <Button x:Name="btnPull" Width="100" Height="40" Click="btnPull_Click" BorderThickness="0" Tag="가져오기" Template="{StaticResource ButtonTemplate2}" Canvas.Top="195"/>
                 <Button x:Name="btnDevice" Width="100" Height="40" Click="btnDevice_Click" BorderThickness="0" Tag="장치" Template="{StaticResource ButtonTemplate2}" Canvas.Top="265"/>
-                <Button x:Name="btnMenu" Width="25" Height="15" Click="btnMenu_Click" BorderThickness="0"
+                <Button x:Name="btnMenu" Width="40" Height="30" Click="btnMenu_Click" BorderThickness="0" Canvas.Left="10" Canvas.Top="10"/>
             </Canvas>
         </Canvas>
     </Grid>
