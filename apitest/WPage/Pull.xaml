@@ -8,7 +8,7 @@
       Title="Pull">
 
     <Page.Resources>
-        <ControlTemplate x:Key="ButtonTemplate2" TargetType="{x:Type Button}">
+        <ControlTemplate x:Key="MenuBTN" TargetType="{x:Type Button}">
             <TextBlock x:Name="Tag" Text="{TemplateBinding Tag}"
                            FontSize="20" HorizontalAlignment="Right"
                            Foreground="White" Cursor="Hand"
@@ -23,12 +23,12 @@
             </ControlTemplate.Triggers>
         </ControlTemplate>
 
-        <ControlTemplate x:Key="ButtonTemplate" TargetType="{x:Type Button}">
+        <ControlTemplate x:Key="TemplatePushBtn" TargetType="{x:Type Button}">
             <Border Background="{TemplateBinding Background}" 
                 x:Name="Bd" BorderBrush="Transparent"
                 BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="15">
                 <TextBlock x:Name="Tag" Text="{TemplateBinding Tag}"
-                           FontSize="25" HorizontalAlignment="Center"
+                           FontSize="13" HorizontalAlignment="Center"
                            Foreground="White"
                            VerticalAlignment="Center"/>
             </Border>
@@ -48,32 +48,33 @@
                 </Trigger>
             </ControlTemplate.Triggers>
         </ControlTemplate>
-        
+
     </Page.Resources>
 
     <Grid>
         <Canvas x:Name="Back" Height="650" Width="400" Background="White">
             <Canvas x:Name="MenuBar" Width="100" Height="650" Background="#085252">
-                <Button x:Name="btnPush" Width="100" Height="40" Click="btnPush_Click" BorderThickness="0" Tag="내보내기" Template="{StaticResource ButtonTemplate2}" Canvas.Top="151" Canvas.Left="0"/>
-                <Button x:Name="btnPull" Width="100" Height="40" Click="btnPull_Click" BorderThickness="0" Tag="가져오기" Template="{StaticResource ButtonTemplate2}" Canvas.Left="0" Canvas.Top="220"/>
-                <Button x:Name="btnDevice" Width="100" Height="40" Click="btnDevice_Click" BorderThickness="0" Tag="장치" Template="{StaticResource ButtonTemplate2}" Canvas.Left="0" Canvas.Top="303"/>
-                
+                <Button x:Name="btnPush" Width="100" Height="40" Click="btnPush_Click" BorderThickness="0" Tag="내보내기" Template="{StaticResource MenuBTN}" Canvas.Top="151" Canvas.Left="0"/>
+                <Button x:Name="btnPull" Width="100" Height="40" Click="btnPull_Click" BorderThickness="0" Tag="가져오기" Template="{StaticResource MenuBTN}" Canvas.Left="0" Canvas.Top="220"/>
+                <Button x:Name="btnDevice" Width="100" Height="40" Click="btnDevice_Click" BorderThickness="0" Tag="장치" Template="{StaticResource MenuBTN}" Canvas.Left="0" Canvas.Top="303"/>
+
                 <Button x:Name="btnMenu" Width="30" Height="30" Click="btnMenu_Click" BorderThickness="0" Background="Transparent">
                     <Image Source="C:\Users\Hyeon\Desktop\개발\Git\winapp\apitest\Resources\Hambuger_Button_Menu.png"/>
                 </Button>
-                <Button x:Name="ListFinder" Width="30" Height="30" Click="ListFinder_Click" Background="Transparent" BorderThickness="0" Canvas.Left="285" Canvas.Top="25" >
+                <Button x:Name="ListFinder" Width="30" Height="30" Click="ListFinder_Click" Background="Transparent" BorderThickness="0" Canvas.Left="270" Canvas.Top="25" >
                     <Image Source="C:\Users\Hyeon\Desktop\개발\Git\winapp\apitest\Resources\돋보기.png"/>
                 </Button>
 
-                <Button x:Name="PushBTN" Width="70" Height="30" Template="{StaticResource ButtonTemplate}"/> 
+                <Button x:Name="PushBTN" Width="70" Height="30" Background="#085252" Template="{StaticResource TemplatePushBtn}" Canvas.Left="310" Canvas.Top="25"
+                        Tag="내보내기"/>
             </Canvas>
         </Canvas>
 
         <TextBlock x:Name="Title_Push" Width="120" Height="40" Text="내보내기" FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="105,25,175,585"
                    FontFamily="\Resources\NanumSquare_acR.ttf" Foreground="#085252"/>
 
-        <ScrollViewer x:Name="scrollPush" Height="550" Width="300" VerticalAlignment="Bottom" HorizontalAlignment="Right">
-            
+        <ScrollViewer x:Name="PushListScroll" Height="550" Width="300" VerticalAlignment="Bottom" HorizontalAlignment="Right" VerticalScrollBarVisibility="Disabled">
+
         </ScrollViewer>
     </Grid>
 </Page>
