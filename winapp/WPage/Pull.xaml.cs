@@ -46,9 +46,7 @@ namespace winapp.WPage
 
         private void btnPush_Click(object sender, RoutedEventArgs e)
         {
-            if(sender == btnPush)
-            {
-            }
+            
         }
 
         private void btnPull_Click(object sender, RoutedEventArgs e)
@@ -59,6 +57,11 @@ namespace winapp.WPage
         private void btnDevice_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void btnMenu_Click(object sender, RoutedEventArgs e)
+        {
+            
         }
     }
 }
