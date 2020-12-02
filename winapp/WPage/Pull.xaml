@@ -26,7 +26,7 @@
 
     <Grid>
         <Canvas x:Name="Back" Height="650" Width="400" Background="White">
-            <Canvas x:Name="MenuBar" Width="100" Height="650" Background="#085252">
+            <Canvas x:Name="MenuBar" Width="110" Height="650" Background="#085252">
                 <Button x:Name="btnPush" Width="100" Height="40" Click="btnPush_Click" BorderThickness="0" Tag="내보내기" Template="{StaticResource ButtonTemplate2}" Canvas.Top="125"/>
                 <Button x:Name="btnPull" Width="100" Height="40" Click="btnPull_Click" BorderThickness="0" Tag="가져오기" Template="{StaticResource ButtonTemplate2}" Canvas.Top="195"/>
                 <Button x:Name="btnDevice" Width="100" Height="40" Click="btnDevice_Click" BorderThickness="0" Tag="장치" Template="{StaticResource ButtonTemplate2}" Canvas.Top="265"/>
