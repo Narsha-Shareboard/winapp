@@ -103,6 +103,7 @@ namespace winapp.WPage
         {
             Settings.Default.isALChecked = false;
         }
+
     }
     public class PasswordBoxMonitor : DependencyObject
     {

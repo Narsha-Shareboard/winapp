@@ -21,7 +21,7 @@
                     <Setter Property="TextDecorations" Value="Underline" TargetName="Tag"/>
                 </Trigger>
             </ControlTemplate.Triggers>
-        </ControlTemplate>
+        </ControlTemplate>  
     </Page.Resources>
 
     <Grid>
@@ -30,8 +30,17 @@
                 <Button x:Name="btnPush" Width="100" Height="40" Click="btnPush_Click" BorderThickness="0" Tag="내보내기" Template="{StaticResource ButtonTemplate2}" Canvas.Top="151" Canvas.Left="0"/>
                 <Button x:Name="btnPull" Width="100" Height="40" Click="btnPull_Click" BorderThickness="0" Tag="가져오기" Template="{StaticResource ButtonTemplate2}" Canvas.Left="0" Canvas.Top="220"/>
                 <Button x:Name="btnDevice" Width="100" Height="40" Click="btnDevice_Click" BorderThickness="0" Tag="장치" Template="{StaticResource ButtonTemplate2}" Canvas.Left="0" Canvas.Top="303"/>
-                <Button x:Name="btnMenu" Width="25" Height="15" Click="btnMenu_Click" BorderThickness="0" 
+                <Button x:Name="btnMenu" Width="30" Height="30" Click="btnMenu_Click" BorderThickness="0">
+                    <Image Source="Resources/Hambuger_Button_Menu.png"/>
+                </Button>
             </Canvas>
         </Canvas>
+
+        <TextBlock x:Name="Title_Push" Width="120" Height="40" Text="내보내기" FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="105,25,175,585"
+                   FontFamily="\Resources\NanumSquare_acR.ttf" Foreground="#085252"/>
+
+        <ScrollViewer x:Name="scrollPush" Height="550" Width="300" VerticalAlignment="Bottom" HorizontalAlignment="Right">
+            
+        </ScrollViewer>
     </Grid>
 </Page>

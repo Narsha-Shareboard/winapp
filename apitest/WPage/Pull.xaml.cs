@@ -60,5 +60,15 @@ namespace winapp.WPage
         {
 
         }
+
+        private void btnMenu_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnMenu_Click_1(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
