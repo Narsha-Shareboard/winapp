@@ -97,7 +97,11 @@ namespace winapp.WPage
 
         private void chkAutoLogin_Checked(object sender, RoutedEventArgs e)
         {
-            Settings.Default.isALChecked = !Settings.Default.isALChecked;
+            Settings.Default.isALChecked = true;
+        }
+        private void chkAutoLogin_Unchecked(object sender, RoutedEventArgs e)
+        {
+            Settings.Default.isALChecked = false;
         }
     }
     public class PasswordBoxMonitor : DependencyObject

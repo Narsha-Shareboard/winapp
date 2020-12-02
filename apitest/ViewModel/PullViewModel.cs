@@ -16,7 +16,7 @@ namespace winapp.ViewModel
     {
         RestManager restmanager = new RestManager();
 
-        public string[] clipboard { get; set; }
+        public string[] clipboard;
         public async Task Push()
         {
             JObject jobj = new JObject();
