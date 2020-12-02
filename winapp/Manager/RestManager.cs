@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web.UI.WebControls;
 using winapp.Model;
+using winapp.Properties;
 
 namespace winapp.manager
 {
@@ -29,7 +30,11 @@ namespace winapp.manager
             var restClient = new RestClient(ServerSetting.ServerUri);
             var request = new RestRequest(reosurces, method);
 
-            if (TokenModel.Get().token != "")
+            if (string.IsNullOrEmpty(Settings.Default.token))
+            {
+                request.AddHeader("Authorization", Settings.Default.token);
+            }
+            else if (string.IsNullOrEmpty(TokenModel.Get().token))
             {
                 request.AddHeader("Authorization", TokenModel.Get().token);
             }

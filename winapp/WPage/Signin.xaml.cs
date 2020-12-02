@@ -88,6 +88,10 @@ namespace winapp.WPage
         private async void autoLogin()
         {
             await App.AutoLoginViewModel.AutoLogin();
+            if (AutoLoginCheck.isValidAccess == true)
+            {
+                _mainWindow.NavigatePage(new Pull(_mainWindow));
+            }
         }
 
         private void btnFindPW_Click(object sender, RoutedEventArgs e)

@@ -174,7 +174,7 @@
         <Button x:Name="btnRegister" Tag="Sign Up" Click="btnRegister_Click" Margin="280,533,70,96" RenderTransformOrigin="0.396,3.19" Template="{StaticResource ButtonTemplate2}"/>
         <Button x:Name="btnFindPW" Tag="Forgot Password?" Click="btnFindPW_Click" Margin="70,533,230,96" Template="{StaticResource ButtonTemplate2}"/>
 
-        <CheckBox x:Name="chkAutoLogin" BorderBrush="Transparent" Content="Auto Login" Margin="70,444,249,190" Checked="chkAutoLogin_Checked" Unchecked="chkAutoLogin_Unchecked"/>
+        <CheckBox x:Name="chkAutoLogin" BorderBrush="Transparent" Content="Auto Login" Margin="70,444,249,190" Checked="chkAutoLogin_Checked" Unchecked="chkAutoLogin_Unchecked" Cursor="Hand"/>
         <TextBlock Height="55" Margin="70,130,70,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="50" TextAlignment="Center" Foreground="White" Text="Shareboard"
                    FontFamily="/.../Resources/NanumSquare_acR.ttf/.../"/>
     </Grid>
