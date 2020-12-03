@@ -30,11 +30,11 @@ namespace winapp.manager
             var restClient = new RestClient(ServerSetting.ServerUri);
             var request = new RestRequest(reosurces, method);
 
-            if (string.IsNullOrEmpty(Settings.Default.token))
+            if (!string.IsNullOrEmpty(Settings.Default.token))
             {
                 request.AddHeader("Authorization", Settings.Default.token);
             }
-            else if (string.IsNullOrEmpty(TokenModel.Get().token))
+            else if (!string.IsNullOrEmpty(TokenModel.Get().token))
             {
                 request.AddHeader("Authorization", TokenModel.Get().token);
             }
