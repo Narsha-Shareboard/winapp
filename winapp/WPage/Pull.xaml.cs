@@ -52,17 +52,18 @@ namespace winapp.WPage
 
         private void btnPush_Click(object sender, RoutedEventArgs e)
         {
-            
+            MessageBox.Show("가져오기 버튼이 눌렸습니다.");
+
         }
 
         private void btnPull_Click(object sender, RoutedEventArgs e)
         {
-
+            MessageBox.Show("가져오기 버튼이 눌렸습니다.");
         }
 
         private void btnDevice_Click(object sender, RoutedEventArgs e)
         {
-
+            MessageBox.Show("가져오기 버튼이 눌렸습니다.");
         }
 
         private void btnLogout_Click(object sender, RoutedEventArgs e)
