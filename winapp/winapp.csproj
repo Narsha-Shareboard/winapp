@@ -146,7 +146,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Menu_Button.png" />
+    <Content Include="Resources\Menu_Button.jpg" />
+    <Resource Include="Resources\돋보기.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

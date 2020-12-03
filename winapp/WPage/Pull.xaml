@@ -19,19 +19,26 @@
                 <Trigger Property="IsMouseOver" Value="True">
                     <Setter Property="TextBlock.Foreground" Value="LightSlateGray" TargetName="Tag"/>
                 </Trigger>
+                <Trigger Property="IsPressed" Value="True">
+                    <Setter Property="TextBlock.Background" Value="White"/>
+                    <Setter Property="TextBlock.Foreground" Value="#085252"/>
+                </Trigger>
             </ControlTemplate.Triggers>
         </ControlTemplate>
     </Page.Resources>
 
     <Grid>
+
         <Canvas x:Name="Back" Height="650" Width="400" Background="White">
             <Canvas x:Name="MenuBar" Width="110" Height="650" Background="#085252">
                 <Button x:Name="btnPush" Width="100" Height="40" Click="btnPush_Click" BorderThickness="0" Tag="내보내기" Template="{StaticResource MenuButtonTemplate}" Canvas.Top="125"/>
                 <Button x:Name="btnPull" Width="100" Height="40" Click="btnPull_Click" BorderThickness="0" Tag="가져오기" Template="{StaticResource MenuButtonTemplate}" Canvas.Top="195"/>
                 <Button x:Name="btnDevice" Width="100" Height="40" Click="btnDevice_Click" BorderThickness="0" Tag="장치" Template="{StaticResource MenuButtonTemplate}" Canvas.Top="265"/>
                 <Button x:Name="btnLogout" Width="100" Height="40" Click="btnLogout_Click" BorderThickness="0" Tag="로그아웃" Template="{StaticResource MenuButtonTemplate}" Canvas.Top="600"/>
-                <Button x:Name="btnMenu" Width="40" Height="30" Click="btnMenu_Click" BorderThickness="0" Canvas.Left="10" Canvas.Top="10"/>
             </Canvas>
+
+            <TextBlock x:Name="pullTitle" Text="가져오기" Foreground="#085252" FontSize="30" Canvas.Left="115" Canvas.Top="15"/>
+            <Button x:Name="btnFinder" />
         </Canvas>
     </Grid>
 </Page>
