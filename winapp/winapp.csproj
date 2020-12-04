@@ -76,14 +76,22 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model\AutoLoginModel.cs" />
+    <Compile Include="Model\DeviceModel.cs" />
     <Compile Include="Model\PullModel.cs" />
     <Compile Include="Model\PushModel.cs" />
     <Compile Include="Model\RegisterModel.cs" />
     <Compile Include="ViewModel\AutoLoginViewModel.cs" />
+    <Compile Include="ViewModel\DeviceViewModel.cs" />
+    <Compile Include="WPage\Device.xaml.cs">
+      <DependentUpon>Device.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WPage\Pull.xaml.cs">
       <DependentUpon>Pull.xaml</DependentUpon>
     </Compile>
     <Compile Include="ServerSetting.cs" />
+    <Compile Include="WPage\Push.xaml.cs">
+      <DependentUpon>Push.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WPage\Signin.xaml.cs">
       <DependentUpon>Signin.xaml</DependentUpon>
     </Compile>
@@ -102,9 +110,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="WPage\Device.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="WPage\Pull.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPage\Push.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="WPage\Signin.xaml">
       <SubType>Designer</SubType>
