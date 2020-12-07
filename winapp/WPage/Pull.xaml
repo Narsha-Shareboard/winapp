@@ -30,15 +30,17 @@
     <Grid>
 
         <Canvas x:Name="Back" Height="650" Width="400" Background="White">
-            <Canvas x:Name="MenuBar" Width="110" Height="650" Background="#085252">
+            <Canvas x:Name="MenuBar" Width="110" Height="560" Background="#085252" VerticalAlignment="Bottom" HorizontalAlignment="Left">
                 <Button x:Name="btnPush" Width="100" Height="40" Click="btnPush_Click" BorderThickness="0" Tag="내보내기" Template="{StaticResource MenuButtonTemplate}" Canvas.Top="125"/>
                 <Button x:Name="btnPull" Width="100" Height="40"  Click="btnPull_Click" BorderThickness="0" Tag="가져오기" Template="{StaticResource MenuButtonTemplate}" Canvas.Top="195" IsEnabled="False"/>
                 <Button x:Name="btnDevice" Width="100" Height="40" Click="btnDevice_Click" BorderThickness="0" Tag="장치" Template="{StaticResource MenuButtonTemplate}" Canvas.Top="265"/>
                 <Button x:Name="btnLogout" Width="100" Height="40" Click="btnLogout_Click" BorderThickness="0" Tag="로그아웃" Template="{StaticResource MenuButtonTemplate}" Canvas.Top="600"/>
             </Canvas>
 
-            <TextBlock x:Name="pullTitle" Text="가져오기" Foreground="#085252" FontSize="30" Canvas.Left="115" Canvas.Top="15"/>
-            <Button x:Name="btnFinder" />
+            <TextBlock x:Name="pullTitle" Text="가져오기" Foreground="#085252" FontSize="30" Canvas.Left="115" Canvas.Top="15" />
+            <Button x:Name="btnFinder" Background="Transparent" Canvas.Top="115" Canvas.Left="100">
+                <Image Source ="C:\Users\Hyeon\Desktop\개발\Git\winapp\winapp\Resources\돋보기.png"/>
+            </Button>
         </Canvas>
     </Grid>
 </Page>

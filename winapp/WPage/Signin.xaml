@@ -14,7 +14,7 @@
                 BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="15">
                 <ScrollViewer x:Name="PART_ContentHost" Cursor="IBeam"/>
             </Border>
-            <ControlTemplate.Triggers>
+            <ControlTemplate.Triggers> 
                 <Trigger Property="IsEnabled" Value="False">
                     <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" TargetName="Bd"/>
                     <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
