@@ -12,7 +12,7 @@ using System.Windows;
 
 namespace winapp.ViewModel
 {
-    class PushViewModel : BindableBase
+    public class PushViewModel : BindableBase
     {
         RestManager restmanager = new RestManager();
 

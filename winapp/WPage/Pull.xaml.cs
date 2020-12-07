@@ -45,25 +45,14 @@ namespace winapp.WPage
             DataContext = App.PullViewModel;
         }
 
-        private void btnMenu_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void btnPush_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("가져오기 버튼이 눌렸습니다.");
-
-        }
-
-        private void btnPull_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("가져오기 버튼이 눌렸습니다.");
+            MessageBox.Show("내보내기 버튼이 눌렸습니다.");
         }
 
         private void btnDevice_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("가져오기 버튼이 눌렸습니다.");
+            MessageBox.Show("장치 버튼이 눌렸습니다.");
         }
 
         private void btnLogout_Click(object sender, RoutedEventArgs e)
