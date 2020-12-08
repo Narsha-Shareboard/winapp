@@ -47,20 +47,20 @@ namespace winapp.WPage
 
         private void btnPush_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("내보내기 버튼이 눌렸습니다.");
+            _mainWindow.NavigatePage(new Device(_mainWindow));
         }
 
         private void btnDevice_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("장치 버튼이 눌렸습니다.");
+            _mainWindow.NavigatePage(new Device(_mainWindow));
         }
 
         private void btnLogout_Click(object sender, RoutedEventArgs e)
         {
-            _mainWindow.NavigatePage(new Signin(_mainWindow));
-            Settings.Default.token = "";
             Settings.Default.isALChecked = false;
             Settings.Default.Save();
+            _mainWindow.NavigatePage(new Signin(_mainWindow));
+            MessageBox.Show("로그아웃되었습니다.", "Logout");
         }
 
         private void Pull1_Selected(object sender, RoutedEventArgs e)
