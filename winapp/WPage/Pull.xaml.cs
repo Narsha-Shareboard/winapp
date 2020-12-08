@@ -62,5 +62,10 @@ namespace winapp.WPage
             Settings.Default.isALChecked = false;
             Settings.Default.Save();
         }
+
+        private void Pull1_Selected(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
