@@ -8,7 +8,7 @@
       Title="Pull">
 
     <Page.Resources>
-        <ControlTemplate x:Key="MenuButtonTemplate" TargetType="{x:Type Button}">
+        <ControlTemplate x:Key="ButtonTemplate2" TargetType="{x:Type Button}">
             <TextBlock x:Name="Tag" Text="{TemplateBinding Tag}"
                            FontSize="20" HorizontalAlignment="Right"
                            Foreground="White" Cursor="Hand"
@@ -17,32 +17,28 @@
 
             <ControlTemplate.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="TextBlock.Foreground" Value="LightSlateGray" TargetName="Tag"/>
-                </Trigger>
-                <Trigger Property="IsPressed" Value="True">
-                    <Setter Property="TextBlock.Background" Value="White"/>
-                    <Setter Property="TextBlock.Foreground" Value="#085252"/>
+                    <Setter Property="Background" Value="Transparent"/>
+                    <Setter Property="TextDecorations" Value="Underline" TargetName="Tag"/>
                 </Trigger>
             </ControlTemplate.Triggers>
-        </ControlTemplate>
+        </ControlTemplate>  
     </Page.Resources>
 
     <Grid>
+        <Canvas x:Name="Back" Height="650" Width="400" Background="White">
+            <Canvas x:Name="MenuBar" Width="110" Height="650" Background="#085252">
+                <Button x:Name="btnPush" Width="100" Height="40" Click="btnPush_Click" BorderThickness="0" Tag="내보내기" Template="{StaticResource ButtonTemplate2}" Canvas.Top="125"/>
+                <Button x:Name="btnPull" Width="100" Height="40" Click="btnPull_Click" BorderThickness="0" Tag="가져오기" Template="{StaticResource ButtonTemplate2}" Canvas.Top="195"/>
+                <Button x:Name="btnDevice" Width="100" Height="40" Click="btnDevice_Click" BorderThickness="0" Tag="장치" Template="{StaticResource ButtonTemplate2}" Canvas.Top="265"/>
+                <Button x:Name="btnMenu" Width="40" Height="30" Click="btnMenu_Click" BorderThickness="0" Canvas.Left="10" Canvas.Top="10"/>
+            </Canvas>
+        </Canvas>
 
-        <Rectangle x:Name="Back" Height="650" Width="400" Fill="#F3F6FD"/>
-        <Rectangle x:Name="MenuBar" Width="100" Height="560" Fill="#5790FB" VerticalAlignment="Bottom" HorizontalAlignment="Left"/>
-        
-        <!--
-                        <Button x:Name="btnPush" Width="100" Height="40" Click="btnPush_Click" BorderThickness="0" Tag="내보내기" Template="{StaticResource MenuButtonTemplate}" Canvas.Top="125"/>
-                <Button x:Name="btnPull" Width="100" Height="40"  Click="btnPull_Click" BorderThickness="0" Tag="가져오기" Template="{StaticResource MenuButtonTemplate}" Canvas.Top="195" IsEnabled="False"/>
-                <Button x:Name="btnDevice" Width="100" Height="40" Click="btnDevice_Click" BorderThickness="0" Tag="장치" Template="{StaticResource MenuButtonTemplate}" Canvas.Top="265"/>
-                <Button x:Name="btnLogout" Width="100" Height="40" Click="btnLogout_Click" BorderThickness="0" Tag="로그아웃" Template="{StaticResource MenuButtonTemplate}" Canvas.Top="600"/>
-        -->
+        <TextBlock x:Name="Title_Push" Width="120" Height="40" Text="내보내기" FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="105,25,175,585"
+                   FontFamily="\Resources\NanumSquare_acR.ttf" Foreground="#085252"/>
 
-        <TextBlock x:Name="pullTitle" Text="Shareboard" Foreground="#5790FB" Width="135" Height="35" FontSize="24" Margin="20,30,245,585" TextAlignment="Center"/>
-
-        <ScrollViewer x:Name="ListScroll" Width="300" Height="560" VerticalAlignment="Bottom" HorizontalAlignment="Right" VerticalScrollBarVisibility="Hidden">
-               
+        <ScrollViewer x:Name="scrollPush" Height="550" Width="300" VerticalAlignment="Bottom" HorizontalAlignment="Right">
+            
         </ScrollViewer>
     </Grid>
 </Page>
