@@ -23,9 +23,39 @@
             </ControlTemplate.Triggers>
         </ControlTemplate>
 
-        <ControlTemplate x:Key="ListviewItemTemplate" TargetType="{x:Type ListViewItem}">
-            <TextBlock x:Name="Tag" Text="{TemplateBinding Tag}"
-                           FontSize="20" HorizontalAlignment="Right"
+        <ControlTemplate x:Key="ListPullTemplate" TargetType="{x:Type ListViewItem}">
+            <ListViewItem x:Name="Pull" Content="가져오기" Width="100" Height="40"
+                           FontSize="20" HorizontalContentAlignment="Right"
+                           Foreground="White" Cursor="Hand"
+                           VerticalAlignment="Center" 
+                           Background="#085252"/>
+
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsSelected" Value="True">
+                    <Setter Property="Background" Value="White"/>
+                    <Setter Property="Foreground" Value="#085252"/>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+
+        <ControlTemplate x:Key="ListPushTemplate" TargetType="{x:Type ListViewItem}">
+            <ListViewItem x:Name="Push" Content="내보내기" Width="100" Height="40"
+                           FontSize="20" HorizontalContentAlignment="Right"
+                           Foreground="White" Cursor="Hand"
+                           VerticalAlignment="Center" 
+                           Background="#085252"/>
+
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsSelected" Value="True">
+                    <Setter Property="Background" Value="White"/>
+                    <Setter Property="Foreground" Value="#085252"/>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+
+        <ControlTemplate x:Key="ListDeviceTemplate" TargetType="{x:Type ListViewItem}">
+            <ListViewItem x:Name="Device" Content="기종"  Width="100" Height="40"
+                           FontSize="20" HorizontalContentAlignment="Right"
                            Foreground="White" Cursor="Hand"
                            VerticalAlignment="Center" 
                            Background="#085252"/>
@@ -41,19 +71,22 @@
 
     <Grid>
 
-        <Rectangle x:Name="Back" Height="650" Width="400" Fill="White"/>
+        <Rectangle x:Name="Back" Height="650" Width="400" Fill="White" Grid.ColumnSpan="2"/>
 
-        <ListView x:Name="MenuBar" Width="100" Height="650" Background="#085252" HorizontalAlignment="Left" BorderThickness="0" 
-                  ScrollViewer.HorizontalScrollBarVisibility="Hidden" ScrollViewer.VerticalScrollBarVisibility="Hidden">
+        <ListView x:Name="MenuBar" Width="100" Background="#085252" HorizontalAlignment="Left" BorderThickness="0" 
+                  ScrollViewer.HorizontalScrollBarVisibility="Hidden" ScrollViewer.VerticalScrollBarVisibility="Hidden" Margin="0,0,0,1">
+            
+            <ListViewItem x:Name="btnPush" Width="100" Height="40" Content="내보내기" Template="{StaticResource ListPushTemplate}"
+                          VerticalContentAlignment="Center" HorizontalContentAlignment="Right" MouseDoubleClick="btnPush_MouseDoubleClick"/>
 
-            <ListViewItem x:Name="PullListView" Width="100" Height="40" Content="가져오기" VerticalContentAlignment="Center" HorizontalContentAlignment="Right"
-                          Template="{StaticResource ListviewItemTemplate}"/>
+
+            <ListViewItem x:Name="btnPull"  Content="가져오기" VerticalContentAlignment="Center" HorizontalContentAlignment="Right"
+                          Template="{StaticResource ListPullTemplate}" MouseDoubleClick="btnPull_MouseDoubleClick"/>
             
-            <ListViewItem x:Name="DeviceListView" Width="100" Height="40" Content="기종" Template="{StaticResource ListviewItemTemplate}"
-            VerticalContentAlignment="Center" HorizontalContentAlignment="Right"/>
             
-            <ListViewItem x:Name="PushListView" Width="100" Height="40" Content="내보내기" Template="{StaticResource ListviewItemTemplate}"
-                          VerticalContentAlignment="Center" HorizontalContentAlignment="Right" IsEnabled="True"/>
+            <ListViewItem x:Name="btnDevice" Width="100" Height="40" Content="기종" Template="{StaticResource ListDeviceTemplate}"
+            VerticalContentAlignment="Center" HorizontalContentAlignment="Right" MouseDoubleClick="btnDevice_MouseDoubleClick"/>
+
         </ListView>
 
         <!--
@@ -62,10 +95,10 @@
         <Button x:Name="btnDevice" Width="100" Height="40" Click="btnDevice_Click" FontSize="20" BorderThickness="0" Tag="장치" Template="{StaticResource ButtonTemplate}" Margin="0,336,300,274"/>
 -->
         <TextBlock x:Name="Title_Pull" Width="120" Height="40" Text="가져오기" FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="119,17,161,593"
-                   FontFamily="\Resources\NanumSquare_acR.ttf" Foreground="#085252"/>
+                   FontFamily="\Resources\NanumSquare_acR.ttf" Foreground="#085252" Grid.ColumnSpan="2"/>
 
-        <ScrollViewer x:Name="scrollPull" Height="550" Width="300" VerticalAlignment="Bottom" HorizontalAlignment="Right" VerticalScrollBarVisibility="Hidden">
-            <Button x:Name="PullContent" Content="테스트용 컨텐츠" Width="300" Height="50" Background="Transparent" BorderThickness="0" />
+        <ScrollViewer x:Name="scrollPull" Height="550" Width="300" VerticalAlignment="Bottom" HorizontalAlignment="Right" VerticalScrollBarVisibility="Hidden" Grid.ColumnSpan="2">
+            <Button x:Name="PullContent" Content="테스트용 컨텐츠" Width="300" Height="50" BorderBrush="LightGray" Background="Transparent" BorderThickness="1" Margin="0, 0, 0, 520"/>
         </ScrollViewer>
     </Grid>
 </Page>

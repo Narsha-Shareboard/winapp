@@ -45,6 +45,7 @@ namespace winapp.WPage
             DataContext = App.PullViewModel;
         }
 
+        /*
         private void btnPush_Click(object sender, RoutedEventArgs e)
         {
             _mainWindow.NavigatePage(new Device(_mainWindow));
@@ -54,6 +55,7 @@ namespace winapp.WPage
         {
             _mainWindow.NavigatePage(new Device(_mainWindow));
         }
+        */
 
         private void btnLogout_Click(object sender, RoutedEventArgs e)
         {
@@ -63,9 +65,19 @@ namespace winapp.WPage
             MessageBox.Show("로그아웃되었습니다.", "Logout");
         }
 
-        private void Pull1_Selected(object sender, RoutedEventArgs e)
+        private void btnPull_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
 
+        }
+
+        private void btnPush_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            _mainWindow.NavigatePage(new Device(_mainWindow));
+        }
+
+        private void btnDevice_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            _mainWindow.NavigatePage(new Device(_mainWindow));
         }
     }
 }
