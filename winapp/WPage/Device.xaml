@@ -77,13 +77,13 @@
         <ListView x:Name="MenuBar" Width="100" Height="650" Background="#085252" HorizontalAlignment="Left" BorderThickness="0" 
                   ScrollViewer.HorizontalScrollBarVisibility="Hidden" ScrollViewer.VerticalScrollBarVisibility="Hidden">
 
-            <ListViewItem x:Name="PullListView" Width="100" Height="40" Content="가져오기" VerticalContentAlignment="Center" HorizontalContentAlignment="Right"
+            <ListViewItem x:Name="PullListView" Width="100" Height="40" Content="가져오기" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" Margin="0,100,0,0"
                           Template="{StaticResource ListPullTemplate}"/>
 
             <ListViewItem x:Name="PushListView" Width="100" Height="40" Content="내보내기" VerticalContentAlignment="Center" HorizontalContentAlignment="Right"
-                          Template="{StaticResource ListPushTemplate}"/>
+                          Template="{StaticResource ListPushTemplate}" Margin="0,50,0,0"/>
             <ListViewItem x:Name="DeviceListView" Width="100" Height="40" Content="기종" VerticalContentAlignment="Center" HorizontalContentAlignment="Right"
-                          Template="{StaticResource ListDeviceTemplate}"/>
+                          Template="{StaticResource ListDeviceTemplate}" Margin="0,50,0,0"/>
         </ListView>
 
         <!--

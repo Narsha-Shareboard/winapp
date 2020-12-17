@@ -44,5 +44,19 @@ namespace winapp.WPage
         {
             DataContext = App.PushViewModel;
         }
+
+        private void btnPush_MouseDoubleClick(object Sender, RoutedEventArgs e)
+        {
+
+        }
+        private void btnPull_MouseDoubleClick(object Sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnDevice_MouseDoubleClick(object Sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
