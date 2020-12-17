@@ -78,13 +78,13 @@
             
             <ListViewItem x:Name="btnPush" Width="100" Height="40" Content="내보내기" Template="{StaticResource ListPushTemplate}"
                           VerticalContentAlignment="Center" HorizontalContentAlignment="Right" MouseDoubleClick="btnPush_MouseDoubleClick"/>
-
-
+            
+            <!--
             <ListViewItem x:Name="btnPull"  Content="가져오기" VerticalContentAlignment="Center" HorizontalContentAlignment="Right"
                           Template="{StaticResource ListPullTemplate}" MouseDoubleClick="btnPull_MouseDoubleClick"/>
-            
-            
-            <ListViewItem x:Name="btnDevice" Width="100" Height="40" Content="기종" Template="{StaticResource ListDeviceTemplate}"
+     
+
+            <ListViewItem x:Name="btnDevice" Width="100" Height="40" Content="기종" Template="{StaticResource ListDeviceTemplate}" 
             VerticalContentAlignment="Center" HorizontalContentAlignment="Right" MouseDoubleClick="btnDevice_MouseDoubleClick"/>
 
         </ListView>

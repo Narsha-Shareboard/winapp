@@ -82,7 +82,6 @@
 
             <ListViewItem x:Name="PushListView" Width="100" Height="40" Content="내보내기" VerticalContentAlignment="Center" HorizontalContentAlignment="Right"
                           Template="{StaticResource ListPushTemplate}"/>
-            
             <ListViewItem x:Name="DeviceListView" Width="100" Height="40" Content="기종" VerticalContentAlignment="Center" HorizontalContentAlignment="Right"
                           Template="{StaticResource ListDeviceTemplate}"/>
         </ListView>
